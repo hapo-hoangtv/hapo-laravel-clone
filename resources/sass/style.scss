@@ -1,0 +1,503 @@
+@import 'variables';
+
+#collapsibleNavbar {
+  .hapo-menu {
+      text-align: center;
+
+       a {
+          padding: 8px 10px;
+          text-transform: uppercase;
+          -webkit-text-stroke-width: 0.3px;
+          @include font(bold,14px,"Open Sans",19px,$card_text_color);
+        } 
+    }
+}
+
+.hapo-menu {
+  .nav-item:hover {
+    a {
+      border-radius: 17px;
+      background-color: $menu_color;
+      color: $main_footer_color !important;
+    }
+  }  
+}
+
+.hapo-menu {
+  .nav-item {
+    margin: 0 10px;
+  }
+}
+//end header
+
+.banner {
+  background: url('../storage/image/Rectangle\ 1.png') no-repeat center/cover;
+
+  .hapo-banner {
+    padding: 160px 0 180px 55px;
+
+    .banner-learn {
+      @include font(normal,50px,'UTM BryantLG',61px,$title-color);
+    }
+
+    .banner-title {
+      -webkit-text-stroke-width: 1px;
+      @include font(bold,50px,'UTM BryantLG',61px,$title-color);
+    }
+
+    .banner-des {
+      letter-spacing: -0.05em;
+      height: 50px;
+      margin-top: 10px;
+      @include font(normal,20px,'UTM BryantLG',25px,$card_text_color);
+    }
+
+    .btn-start {
+      background: $button_start_color;
+      border-radius: 35px;
+      -webkit-text-stroke-width: 1px;
+      padding: 15px 52px;
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+      margin-top: 25px;
+      @include font(normal,30px,'UTM BryantLG',37px,$main_footer_color);
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+//end banner first
+
+.main-footer {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  background-color: $card_text_color;
+}
+
+.footer-logo {
+  display: block;
+  padding: 25px 77px;
+}
+
+.footer-logo-note {
+  letter-spacing: -0.05em;
+  margin-left: 135px;
+  margin-top: -20px;
+  @include font(normal,20px,'UTM BryantLG',25px,$main_footer_color);
+}
+
+.footer-menu {
+  padding: 25px 10px;
+
+  a {
+    @include font(bold,20px,'UTM BryantLG',25px,$main_footer_color);
+    letter-spacing: -0.05em;
+    text-decoration: none;
+
+    &:hover {
+      color: $main_footer_color;
+      text-decoration: underline;
+    }
+  }
+}
+
+.social {
+  .social-link {
+    margin-right: 30px;
+    padding-top: 5px;
+    border-radius: 50%;
+
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+  }
+}
+  
+.copy-right {
+  background-color: #454545;
+  text-align: center;
+
+  p {
+    letter-spacing: -0.05em;
+    padding: 5px;
+    @include font(normal,16px,'UTM BryantLG',18px,$main_footer_color);
+  }
+}
+//endfooter
+
+.hapo-question {
+  margin-top: 100px;
+  background : url('../storage/image/Rectangle17.png') no-repeat center/cover;
+    
+  .question-logo {
+    position: absolute;
+    margin-top: -250px;
+    margin-left: -15px;
+  }
+
+  .hapo-question-why {
+    -webkit-text-stroke: 1px;
+    margin-right: 25px;
+    @include font(bold,65px,'UTM BryantLG',86px,$main_footer_color);
+  }
+
+  .hapo-question-body {
+    margin-top: 210px;
+    text-align: right;
+    position: relative;
+    @include font(normal,20px,'UTM BryantLG',52px,$main_footer_color);
+  }
+
+  .question-why-right {
+    position: relative;
+    margin-top: 125px;
+  }
+}
+//end question
+
+.banner-second {
+  padding-bottom: 120px;
+  background: url("../storage/image/Group\ 7.png") no-repeat center/cover;
+
+  .become-title {
+    padding-top: 80px;
+    @include font(bold,60px,'UTM BryantLG',74px,$main_footer_color);
+  }
+
+  .btn-start-learn {
+    padding: 10px 45px;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 40px;
+    box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
+    border: 0;
+    @include font(bold,30px,'UTM BryantLG',37px,$banner_second_color);
+
+    &:hover {
+      opacity: 0.8;
+      color: $banner_second_color;
+      text-decoration: none;
+    }
+  }
+}
+//end banner second
+
+.hapo-title {
+  margin-top: 80px;
+  -webkit-text-stroke: 2px;
+  @include font(bold,80px,'UTM BryantLG',98px,$title-color);
+  
+  .underline {
+  border-bottom: 6px solid #B2D235;
+  border-radius: 3px;
+  padding-bottom: 10px;
+  }
+}
+
+.statistic {
+  .statistic-body {
+    .statistic-learn {
+      letter-spacing: -0.05em;
+
+      span{
+        @include font(bold,60px,'UTM BryantLG',74px,#505353);
+      }
+      
+      p{
+        @include font(bold,60px,'UTM BryantLG',74px,#B2D235);
+      }
+    }
+  }
+}
+//end statistic
+
+.hapo-banner-space {
+  height: 160px;
+  background-image: linear-gradient($main_footer_color, #E5E5E5);
+}
+
+.hapo-subject {
+  margin-top: -100px;
+}
+
+.hapolearn-courses {
+  .subject-courses {
+    margin: 0 15px;
+    padding: 0;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+
+    .hapolearn-subject {
+      height: 50%;
+      object-fit: contain;
+      padding: 12% 20%;
+      border-radius: 15px 15px 0 0;
+    }
+
+    .subject-html {
+      background-color: #3F6185;
+    }
+
+    .subject-laravel {
+      background-color: $red_color;
+    }
+
+    .subject-php {
+      background-color: #556598;
+    }
+  }
+}
+
+.hapolearn-card-title {
+  -webkit-text-stroke: 0.8px;
+  @include font(bold, 25px, 'UTM BryantLG', 37px, $menu_color);
+}
+
+.hapolearn-card-text {
+  @include font(bold, 14px, 'UTM BryantLG', 20px, $card_text_color);
+}
+
+.hapolearn-courses-btn {
+  background-color: $button_start_color !important;
+  border-radius: 25px;
+  box-shadow: inset 0 1.5px 2px #6F8710;
+  bottom: 15px;
+  padding: 8px 0;
+  @include font(bold, 18px, 'UTM BryantLG', 22px, $main_footer_color);
+
+  &:hover {
+    color: $main_footer_color;
+    background-color: #bce41b;
+    transform: scale(1.1);
+    box-shadow: none;
+  }
+}
+
+.hapo-other-subject {
+  margin-top: 50px;
+}
+ 
+.hapolearn-othercourses {
+  .subject-courses {
+    margin: 0 15px;
+    padding: 0;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+
+    .hapolearn-subject {
+      height: 50%;
+      object-fit: contain;
+      padding: 12% 20%;
+      border-radius: 15px 15px 0 0;
+    }
+
+    .subject-css {
+      background-color: #24ABE2;
+    }
+
+    .subject-rails {
+      background-color: $red_color;
+    }
+
+    .subject-java {
+      background-color: #1B75BB;
+    }
+  }
+}
+
+.hapo-all-courses {
+  -webkit-text-stroke: 1px;
+  @include font(bold, 40px, 'UTM BryantLG', 49px, $banner_second_color);
+
+  img {
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+  
+  &:hover {
+    cursor: pointer;
+    color: $banner_second_color;
+    transform: scale(1.1);
+    transition: all ease-in-out 0.5s;
+  }
+}
+//end othercourses
+
+.hapo-feedback {
+  margin-bottom: 245px;
+}
+
+.hapo-feedback-des {
+  margin: 23px auto 40px auto;
+  padding: 0 235px; 
+  letter-spacing: -0.02em;
+  @include font(normal, 25px, 'UTM BryantLG', 31px, #505353); 
+}
+
+.feedback-comment {
+  margin: 10px;
+  border: 0.5px solid #E2E2E2;
+  box-shadow: 1px 1px 5px 0.5px #969694;
+  border-radius: 10px;
+ 
+  &:after,
+  &:before {
+    content: '';
+    border: solid transparent;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  &:after {
+    border-top-color: #FFFFFF;
+    border-width: 10px;
+    top: 56.5%;
+    margin-left: 32px;
+  }
+
+  &:before {
+    border-top-color: #E2E2E2;
+    border-width: 12px;
+    top: 56.5%;
+    margin-left: 30px;
+  }
+
+  .comment-content{
+    p {
+      border-left: #D9DADC solid 5px;
+      margin: 20px;
+      padding: 20px;
+      letter-spacing: -0.05em;
+      @include font(normal, 16px, 'UTM BryantLG', 20px, #000000);
+    }
+  }
+ 
+}
+
+.feedback-user {
+  margin-top: 25px;
+  margin-left: 35px;
+
+  img {
+    height: 60px;
+  }
+}
+
+.user-information {
+  margin-left: 15px;
+  .user-name {
+    @include font(bold, 20px, 'UTM BryantLG', 25px, #11114E);   
+  }
+
+  h4 {
+    margin: 5px 0;
+    @include font(bold, 16px, 'UTM BryantLG', 20px, #505353);   
+  }
+
+  .rate {
+    i {
+      color: #F2C54F;
+      font-size: 14px;
+    }
+  }
+}
+
+.control-next {
+  font-size: 20px;
+  padding: 0 5px;
+  margin-top: -195px;
+  color: #969494;
+    
+  i {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding-top: 5px;
+    border-radius: 50%;
+    border: 0.5px solid #C4C4C4;
+  }
+}
+
+.next-left {
+  margin-left: -12px;
+  background-color: white;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.next-right {
+  margin-right: -12px;
+  background-color: white;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+//end feedback
+
+.hapolearn-message{
+  position: fixed;
+  width: 380px;
+  bottom: 20px;
+  right: 50px;
+
+  .message-boxchat {
+    background-color: white;
+    border-radius: 23px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+    display: none;
+
+    .hapolearn-message-detail {
+      img {
+        height: 35px;
+      }
+
+      p {
+        margin-top: 5px;
+        padding: 15px;
+        background-color: #F1F0F0;
+        border-radius: 15px;
+        @include font(normal, 12px, "Open Sans", 17px, $card_text_color);
+      }
+
+      i {
+        color: #C4C4C4;
+        font-size: 24px;
+        cursor: pointer;
+        margin-top: -10px;
+      }
+    }
+
+    .hapolearn-login-user {
+      p {
+        text-align: center;
+        @include font(normal, 12px, "Open Sans", 16px, #B3B3B3);
+      }
+    }
+
+    .hapo-message-user {
+      @include font(normal, 12px, "Open Sans", 16px, #7F7F7F);
+    }
+  }
+
+  .message-open {
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.hapo-message-btnlogin {
+  background: #3184F7;
+  border-radius: 10px;
+  @include font(normal, 12px, "Open Sans", 16px, $main_footer_color);
+}
+//end messenger
+@import '~bootstrap/scss/bootstrap';
+@import '~slick-slider/slick/slick';
+@import 'responsive';
