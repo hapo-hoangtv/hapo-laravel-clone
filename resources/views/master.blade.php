@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | @yield('title')</title>
-    <link href="image/Ellipse 7.png" rel="shortcut icon" type="image/png">
+    <link href="{{ asset('storage/image/Ellipse 7.png')  }}" rel="shortcut icon" type="image/png">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
     <base href="{{asset('')}}">
-    <link href="{{ asset('fontawesome/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('fontawesome/font-awesome.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
     <link href="{{ asset('css/slick.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -18,7 +17,7 @@
     @yield('main')
 
     @include('layouts.footer')
-    
+    @yield('script') 
     <script src="{{ asset('js/jquery.min.js')  }}" type="text/javascript"></script> 
     <script src="{{ asset('js/main.js') }}" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> 

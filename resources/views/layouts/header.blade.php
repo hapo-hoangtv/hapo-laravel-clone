@@ -4,7 +4,7 @@
             <button class="navbar-toggler col-2" id="header-button" type="button" data-target="#collapsibleNavbar" data-toggle="collapse">
                 <span class="fa fa-bars" id="icon"></span>
             </button>
-            <img src="image/Hapo_Learn.png" class="col-xl-3 col-md-6 col-8 ml-xl-1 m-auto">
+            <img src="{{ asset('storage/image/Hapo_Learn.png') }}" class="col-xl-3 col-md-6 col-8 ml-xl-1 m-auto">
             <div class="collapse navbar-collapse col-xl-5 col-md-12 justify-content-xl-end justify-content-md-center px-md-0 ml-md-2" id="collapsibleNavbar">
                 <ul class="navbar-nav hapo-menu">
                     <li class="nav-item">

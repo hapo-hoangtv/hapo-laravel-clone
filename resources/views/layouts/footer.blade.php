@@ -1,7 +1,7 @@
 <footer class="footer container-fluid">
     <div class="main-footer row">
         <div class="footer-des col-xl-4 col-md-4 col-7">
-            <a class="footer-logo" href=""><img alt="" class="img-fluid" src="image/Hapo_Learn_white%201.png"></a>
+            <a class="footer-logo" href=""><img alt="" class="img-fluid" src="{{ asset('storage/image/Hapo_Learn_white%201.png') }}"></a>
             <p class="footer-logo-note">Interactive lessons, "on-the-go"<br>
             practice, peer support.</p>
         </div>
@@ -35,9 +35,9 @@
             </ul>
         </div>
         <div class="social d-flex align-items-center justify-content-center col-xl-4 col-md-4 col-5">
-            <img class="social-link" src="image/Group%203.png" data-toggle="tooltip" data-placement="top" title="facebook.com/tuyen.dung.haposoft">
-            <img class="social-link" src="image/Group%205.png" data-toggle="tooltip" data-placement="top" title="+84-85-645-9898">
-            <img class="social-link" src="image/Group%204.png" data-toggle="tooltip" data-placement="top" title="info@haposoft.com">
+            <img class="social-link" src="{{ asset('storage/image/Group%203.png') }}" data-toggle="tooltip" data-placement="top" title="facebook.com/tuyen.dung.haposoft">
+            <img class="social-link" src="{{ asset('storage/image/Group%205.png') }}" data-toggle="tooltip" data-placement="top" title="+84-85-645-9898">
+            <img class="social-link" src="{{ asset('storage/image/Group%204.png') }}" data-toggle="tooltip" data-placement="top" title="info@haposoft.com">
         </div>
     </div>
     <div class="copy-right justify-content-center align-items-center row">

@@ -31,7 +31,7 @@
 //end header
 
 .banner {
-  background: url("../image/Rectangle\ 1.png") no-repeat center/cover;
+  background: url('../storage/image/Rectangle\ 1.png') no-repeat center/cover;
 
   .hapo-banner {
     padding: 160px 0 180px 55px;
@@ -129,7 +129,7 @@
 
 .hapo-question {
   margin-top: 100px;
-  background : url('../image/Rectangle17.png') no-repeat center/cover;
+  background : url('../storage/image/Rectangle17.png') no-repeat center/cover;
     
   .question-logo {
     position: absolute;
@@ -159,7 +159,7 @@
 
 .banner-second {
   padding-bottom: 120px;
-  background: url("../image/Group\ 7.png") no-repeat center/cover;
+  background: url("../storage/image/Group\ 7.png") no-repeat center/cover;
 
   .become-title {
     padding-top: 80px;
@@ -260,7 +260,7 @@
 }
 
 .hapolearn-courses-btn {
-  background-color: $button_start_color;
+  background-color: $button_start_color !important;
   border-radius: 25px;
   box-shadow: inset 0 1.5px 2px #6F8710;
   bottom: 15px;
