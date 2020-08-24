@@ -1,8 +1,8 @@
 @extends('master')
 @section('title','List course')
 @section('main')
-    <div class="main-body my-5">
-        <div class="filter-find row">
+    <div class="main-body my-5 container">
+        <div class="filter-find row my-3">
             <div class="d-flex align-items-center">
                 <button class="btn filter-btn mr-2"><i class="fas fa-sliders-h mr-1"></i>Filter</button>
                 <input type="text" placeholder="Search..." class="find-input">
@@ -12,8 +12,8 @@
         <div class="all-course row">
             @if ($courses)
                 @foreach ($courses as $course)
-                    <div class="course-program col-xl-5 row mb-4">
-                        <div class="card">
+                    <div class="course-program col-xl-6 row mb-4">
+                        <div class="card mx-2">
                             <div class="card-body">
                                 <div class="course-body">
                                     <img class="float-left mr-4" src="{{ asset($course['image']) }}" alt="HTML">
