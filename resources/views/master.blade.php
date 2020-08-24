@@ -7,9 +7,8 @@
     <link href="{{ asset('storage/image/Ellipse 7.png')  }}" rel="shortcut icon" type="image/png">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
     <base href="{{asset('')}}">
-    <link href="{{ asset('fontawesome/font-awesome.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/slick.css') }}" rel="stylesheet">
+    <link href="{{ asset('fontawesome/all.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     @include('layouts.header')
