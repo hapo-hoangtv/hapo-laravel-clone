@@ -506,7 +506,6 @@
     border-radius: 5px;
     @include font(bold, 16px, "Open Sans", 22px, #505353);
   }
-
   .find-input {
     width: 355px;
     background: #ffffff;
@@ -515,7 +514,6 @@
     padding: 5px 5px;
     @include font(bold, 16px, "Open Sans", 22px, #505353);
   }
-
   .search-icon {
     font-size: 16px;
     position: relative;
@@ -525,30 +523,27 @@
 
 .main-body {
   .card {
-      .card-title {
+    .card-title {
+      @include font(bold, 25px, "UTM BryantLG", 31px, #505353);
+    }
+    .card-link-more {
+      background-color: #b2d235;
+      border-radius: 40px;
+      @include font(bold, 22px, "UTM BryantLG", 25px, white);
+    }
+    .card-text {
+      @include font(normal, 18px, "UTM BryantLG", 25px, #505353);
+    }
+    .course-learners,
+    .course-lessons,
+    .course-quizes {
+      .card-link {
         @include font(bold, 25px, "UTM BryantLG", 31px, #505353);
       }
-
-      .card-link-more {
-          background-color: #b2d235;
-          border-radius: 40px;
-          @include font(bold, 22px, "UTM BryantLG", 25px, white);
+      .card-number {
+        @include font(bold, 30px, "UTM BryantLG", 37px, #b2d235);
       }
-
-      .card-text {
-          @include font(normal, 18px, "UTM BryantLG", 25px, #505353);
-      }
-
-      .course-learners,
-      .course-lessons,
-      .course-quizes {
-          .card-link {
-              @include font(bold, 25px, "UTM BryantLG", 31px, #505353);
-          }
-
-          .card-number {
-              @include font(bold, 30px, "UTM BryantLG", 37px, #b2d235);
-          }
-      }
+    }
   }
 }
+
