@@ -37,10 +37,10 @@
                             </li>
                         </ul>
                     </li>
+                    @endif
                     <li class="nav-item">
                         <a class="nav-link" href="#">PROFILE</a>
                     </li>
-                    @endif
                 </ul>
             </div> 
         </nav>
