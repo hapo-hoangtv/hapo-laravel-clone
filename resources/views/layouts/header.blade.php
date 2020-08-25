@@ -13,23 +13,34 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ Route('course.index') }}">ALL COURSES</a>
                     </li>
+                    @if (Auth::guest())
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="modal" data-target="#login-register">LOGIN/REGISTER</a>
-                    </li>
-                    @if ( Auth::check() )
-                    <li class="nav-item logout">
-                        <a class="nav-link" href="#">
-                            <form action="{{ route('logout') }}" method="post" class="form-logout">
-                                @csrf
-                                <input type="submit" class="d-none">LOGOUT
-                            </form>
-                        </a>
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#loginRegister">LOGIN/REGISTER</a>
                     </li>
                     @else
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">PROFILE</a>
                     </li>
-                    @endif    
+                    @endif
                 </ul>
             </div> 
         </nav>

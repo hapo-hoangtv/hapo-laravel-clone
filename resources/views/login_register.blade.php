@@ -1,15 +1,15 @@
-<div class="modal fade p-0" id="login-register">
+<div class="modal fade p-0" id="loginRegister">
     <div class="modal-dialog" role="document">
       <div class="modal-content mt-3 m-auto">
-        <div class="modal-body d-flex flex-column w-100">
-            <div class="d-flex justify-content-between w-100">
-                <a href="#" class="modal-login col-6 text-center text-decoration-none" id="login">Login</a>
-                <a href="#" class="modal-register col-6 text-center text-decoration-none" id="register">Register</a>
+        <div class="modal-body d-flex flex-column">
+            <div class="d-flex justify-content-between">
+                <a href="#" class="modal-login col-6 text-center text-decoration-none" id="modalLogin">Login</a>
+                <a href="#" class="modal-register col-6 text-center text-decoration-none" id="modalRegister">Register</a>
                 <button type="button" class="close-login position-relative" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="form-login flex-column d-block mx-auto" id="form-login">
+            <div class="form-login flex-column d-block mx-auto" id="formLogin">
                 <form method="POST" action="{{ route('login') }}" class="d-flex flex-column">
                     @csrf
                     <div class="form-group">
@@ -37,15 +37,15 @@
                         </div>
                         <a href="{{ route('password.request') }}" class="forgot-password">Forgot password</a>
                     </div>
-                    <button type="submit" class="btn btn-primary login-btn mx-auto">
+                    <button type="submit" class="btn btn-login mx-auto">
                         {{ __('Login') }}
                     </button>
                 </form>
                 <p class="text-center">Login With</p>
-                <button class="mb-3 w-100 login-google-btn btn p-2"><i class="fab fa-google-plus-g mr-2"></i>Google</button>
-                <button class="mb-3 w-100 login-fb-btn btn p-2"><i class="fab fa-facebook-f mr-2"></i>Facebook</button>
+                <button class="mb-3 w-100 login-google btn p-2"><i class="fab fa-google-plus-g mr-2"></i>Google</button>
+                <button class="mb-3 w-100 login-fb btn p-2"><i class="fab fa-facebook-f mr-2"></i>Facebook</button>
             </div>
-            <div class="form-register mx-auto d-none" id="form-register">
+            <div class="form-register mx-auto d-none" id="formRegister">
                 <form method="POST" action="{{ route('register') }}" class="d-flex flex-column">
                     @csrf
                     <div class="form-group">
@@ -77,7 +77,7 @@
                     </div>
                     <div class="form-group">
                         <label for="re-password" class="lable-input">Repeat Password:</label>
-                        <input id="password-confirm" type="password" class="input-text form-control" name="password_confirmation" required autocomplete="new-password">
+                        <input id="passwordConfirm" type="password" class="input-text form-control" name="password_confirmation" required autocomplete="new-password">
                     </div>
                     <button type="submit" class="btn btn-primary mb-3 mx-auto p-2 login-btn">
                         {{ __('Register') }}

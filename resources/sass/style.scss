@@ -571,12 +571,12 @@
 
   .close-login {
     background: #B2D235;
-    left: -15px;
-    top: -15px;
     border: 1px solid #B2D235;
     border-radius: 50%;
     width: 30px;
     height: 30px;
+    left: -15px;
+    top: -15px;
     cursor: pointer;
 
       span {
@@ -597,6 +597,10 @@
     text-decoration: underline;
     @include font(normal, 18px, "UTM BryantLG", 22px, #b2d235);
   }
+
+  p {
+    @include font(bold, 20px, "UTM BryantLG", 25px, #505353);
+  }
 }
 
 .modal-content {
@@ -609,7 +613,7 @@
   border: 1px solid #e1e1e1;
 }
 
-.login-btn {
+.btn-login {
   border-radius: 22px;
   background-color: #b2d235;
   width: 200px;
@@ -618,12 +622,12 @@
   @include font(bold, 18px, "UTM BryantLG", 22px, white);
 }
 
-.login-google-btn {
+.login-google {
   background-color: #dc4e41;
   @include font(bold, 20px, "UTM BryantLG", 25px, white);
 }
 
-.login-fb-btn {
+.login-fb {
   background-color: #3b5999;
   @include font(bold, 20px, "UTM BryantLG", 25px, white);
 }
