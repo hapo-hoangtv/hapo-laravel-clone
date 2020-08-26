@@ -35,4 +35,21 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip();
 })
 
+$('#modalLogin').click(function() {
+  $('#modalLogin').removeClass('modal-register').addClass('modal-login');
+  $('#modalRegister').removeClass('modal-login').addClass('modal-register');
+  $('#formLogin').removeClass('d-none').addClass('d-block');
+  $('#formRegister').removeClass('d-block').addClass('d-none');
+})
+
+$('#modalRegister').click(function() {
+  $('#modalRegister').removeClass('modal-register').addClass('modal-login');
+  $('#modalLogin').removeClass('modal-login').addClass('modal-register');
+  $('#formLogin').removeClass('d-block').addClass('d-none');
+  $('#formRegister').removeClass('d-none').addClass('d-block');
+})
+
+$('.close-login').click(function() {
+  $('.modal').modal('hide');
+})
 

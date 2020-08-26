@@ -547,3 +547,87 @@
   }
 }
 
+.modal-body {
+  .modal-login {
+    padding: 20px 0;
+    background-color: #b2d235;
+    @include font(bold, 25px, "UTM BryantLG", 31px, white);
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .modal-register {
+    padding: 20px 0;
+    @include font(bold, 25px, "UTM BryantLG", 31px, #b2d235);
+    &:hover {
+      background-color: #f7f7f7;
+    }
+  }
+
+  .lable-input {
+    @include font(bold, 16px, "UTM BryantLG", 25px, #505353);
+  }
+
+  .close-login {
+    background: #B2D235;
+    border: 1px solid #B2D235;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    left: -15px;
+    top: -15px;
+    cursor: pointer;
+
+      span {
+        font-weight: bold;
+        color: #FFFFFF;
+        padding: 8px;
+      }
+  }
+
+  .form-login,
+  .form-register {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 90%;
+  }
+
+  .forgot-password {
+    text-decoration: underline;
+    @include font(normal, 18px, "UTM BryantLG", 22px, #b2d235);
+  }
+
+  p {
+    @include font(bold, 20px, "UTM BryantLG", 25px, #505353);
+  }
+}
+
+.modal-content {
+  width: 90%;
+}
+
+.input-text {
+  margin-bottom: 20px;
+  background-color: #f2f2f2;
+  border: 1px solid #e1e1e1;
+}
+
+.btn-login {
+  border-radius: 22px;
+  background-color: #b2d235;
+  width: 200px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  @include font(bold, 18px, "UTM BryantLG", 22px, white);
+}
+
+.login-google {
+  background-color: #dc4e41;
+  @include font(bold, 20px, "UTM BryantLG", 25px, white);
+}
+
+.login-fb {
+  background-color: #3b5999;
+  @include font(bold, 20px, "UTM BryantLG", 25px, white);
+}
