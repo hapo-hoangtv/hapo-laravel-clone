@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Course;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,5 @@ Auth::routes();
 
 Route::get('/index', 'HomeController@index')->name('index');
 Route::resource('course', 'CourseController');
+
+Route::get('/search-course', 'CourseController@getSearch')->name('course.search');

@@ -631,3 +631,88 @@
   background-color: #3b5999;
   @include font(bold, 20px, "UTM BryantLG", 25px, white);
 }
+
+.course-detail-image {
+  padding: 70px;
+  border-radius: 10px;
+  background-color: #3f6185;
+}
+
+.course-detail {
+  margin-top: 30px;
+
+  .course-detail-lesson {
+    background-color: white;
+    
+    .course-lesson-top {
+      margin-right: 10px;
+      border-bottom: 2px solid #dadada;
+      @include font(bold, 20px, "UTM BryantLG", 25px, #505353);
+    }
+
+    .course-detail-lesson-detail {
+      @include font(bold, 18px, "UTM BryantLG", 22px, #505353);
+    }
+  }
+
+  .course-detail-title {
+    margin-right: 60px;
+  }
+
+  .but-learn {
+    border-top: 1px solid #e2e0e0;
+    border-bottom: 1px solid #e2e0e0;
+  }
+}
+
+.btn-learn {
+  background-color: #b2d235;
+  box-shadow: inset 0 1.5px 2px #6f8710;
+  border-radius: 22px;
+  @include font(bold, 15px, "UTM BryantLG", 18px, white);
+}
+
+.course-desc {
+  background-color: white;
+  color: #505353;
+
+  .course-desc-title {
+    @include font(bold, 25px, "UTM BryantLG", 31px, #505353);
+  }
+
+  .course-desc-body {
+    @include font(normal, 18px, "UTM BryantLG", 26px, #949292);
+  }
+}
+
+.course-info {
+  margin-top: 30px;
+  @include font(normal, 25px, "UTM BryantLG", 31px, #bdb9b9);
+
+  .course-info-text {
+    background-color: white;
+    padding: 20px;
+    border-top: 1px solid #e2e0e0;
+    border-bottom: 1px solid #e2e0e0;
+  }
+
+  .course-info-tittle {
+    background-color: #b2d235;
+    padding: 20px;
+    @include font(bold, 25px, "UTM BryantLG", 31px, white);
+  }
+
+  .btn-learn {
+    font-size: 18px;
+  }
+
+  .other-list {
+    background-color: white;
+
+    .other-list-item {
+      border-top: 1px solid #e2e0e0;
+      border-bottom: 1px solid #e2e0e0;
+      @include font(normal, 16px, "UTM BryantLG", 20px, 505353);
+    }
+  }
+}

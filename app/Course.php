@@ -18,4 +18,24 @@ class Course extends Model
     {
         return $this->belongsToMany(User::class, 'course_user');
     }
+
+    public function tag()
+    {
+        return $this->belongsToMany(Tag::class, 'course_tag');
+    }
+
+    public function getUserCourseAttribute()
+    {
+        return $this->user()->count();
+    }
+
+    public function getLessonCourseAttribute()
+    {
+        return $this->lesson()->count();
+    }
+
+    public function getTimeCourseAttribute()
+    {
+        return $this->lesson->sum('time');
+    }
 }

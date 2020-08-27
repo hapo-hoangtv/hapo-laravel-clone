@@ -14,4 +14,19 @@ class Lesson extends Model
     {
         return $this->belongsTo(Course::class);
     }
+
+    public function user()
+    {
+        return $this->hasMany(User::class);
+    }
+
+    public function getCourseLessonAttribute()
+    {
+        return $this->course;
+    }
+
+    public function getUserLessonAttribute()
+    {
+        return $this->user()->count();
+    }
 }

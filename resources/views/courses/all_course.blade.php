@@ -4,9 +4,12 @@
     <div class="main-body my-5 container">
         <div class="filter-find row my-3">
             <div class="d-flex align-items-center">
-                <button class="btn filter-btn mr-2"><i class="fas fa-sliders-h mr-1"></i>Filter</button>
-                <input type="text" placeholder="Search..." class="find-input">
-                <i class="fas fa-search search-icon"></i>
+                <form action="{{ Route('course.search') }}" method="GET">
+                    <button class="btn filter-btn mr-2"><i class="fas fa-sliders-h mr-1"></i>Filter</button>
+                    <input type="text" placeholder="Search..." class="find-input" name="key">
+                    <i class="fas fa-search search-icon"></i>
+                    {{ csrf_field() }}
+                </form>
             </div>
         </div>
         <div class="all-course row">
@@ -20,21 +23,21 @@
                                     <div class="course-content col-xl-9  offset-3">
                                         <h5 class="card-title">{{ $course['name'] }}</h5>
                                         <p class="card-text mb-0 text-justify">{{ $course['description'] }}</p>
-                                        <a href="#" class="card-link-more col-4 offset-8 d-block text-center py-xl-2 my-xl-3">More</a>
+                                        <a href="{{ Route('course.show',$course->id) }}" class="card-link-more col-4 offset-8 d-block text-center text-decoration-none py-xl-2 my-xl-3">More</a>
                                     </div>
                                 </div>
                                 <div class="course-link row">
                                     <div class="course-learners col-xl-4 text-center">
                                         <a href="#" class="card-link mb-2 d-block">Learners</a>
-                                        <p class="card-number mb-0">16,882</p>
+                                        <p class="card-number mb-0">{{ $course->number_user }}</p>
                                     </div>
                                     <div class="course-lessons col-xl-4 text-center">
                                         <a href="#" class="card-link mb-2 d-block">Lessons</a>
-                                        <p class="card-number mb-0">2,689</p>
+                                        <p class="card-number mb-0">{{ $course->number_lesson }}</p>
                                     </div>
                                     <div class="course-quizes col-xl-4 text-center">
                                         <a href="#" class="card-link mb-2 d-block">Quizzes</a>
-                                        <p class="card-number mb-0">16,882</p>
+                                        <p class="card-number mb-0">{{ $course->number_quizze }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -42,9 +45,9 @@
                     </div>
                 @endforeach
             @else
-                <h1>No course exists</h1>
+                <h1>No course found!</h1>
             @endif
         </div>
     {{ $courses->links() }}
-    </div>   
+    </div>
 @endsection
