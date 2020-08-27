@@ -8,7 +8,7 @@
             <div class="collapse navbar-collapse col-xl-5 col-md-12 justify-content-xl-end justify-content-md-center px-md-0 ml-md-2" id="collapsibleNavbar">
                 <ul class="navbar-nav hapo-menu">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">HOME</a>
+                        <a class="nav-link" href="{{ Route('index') }}">HOME</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ Route('course.index') }}">ALL COURSES</a>
