@@ -89,7 +89,7 @@ class CourseController extends Controller
     public function getSearch(Request $request)
     {
         $courses = Course::where('id', 'like', '%' .$request->key. '%')
-                                ->orWhere('name', $request->key)
+                                ->orWhere('name', 'like', '%' . $request->key. '%')
                                 ->get();
         return view('courses.search', compact('courses'));
     }

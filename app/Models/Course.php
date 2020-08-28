@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model
 {
     public $timestamps = false;
-    protected $fillable = ['id', 'name', 'image', 'description', 'price'];
+    protected $fillable = ['name', 'image', 'description', 'price'];
 
     public function lesson()
     {
@@ -24,12 +24,12 @@ class Course extends Model
         return $this->belongsToMany(Tag::class, 'course_tag');
     }
 
-    public function getUserCourseAttribute()
+    public function getNumberUserCourseAttribute()
     {
         return $this->user()->count();
     }
 
-    public function getLessonCourseAttribute()
+    public function getNumberLessonAttribute()
     {
         return $this->lesson()->count();
     }

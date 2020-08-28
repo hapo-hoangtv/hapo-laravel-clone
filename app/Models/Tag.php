@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Tag extends Model
 {
     public $timestamps = false;
-    protected $fillable = ['id', 'name'];
+    protected $fillable = ['name'];
 
     public function course()
     {
-        return $this->belongsTo(Course::class, 'course_tag');
+        return $this->belongsToMany(Course::class, 'course_tag');
     }
 }

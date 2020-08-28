@@ -8,7 +8,7 @@ class Lesson extends Model
 {
     public $timestamps = false;
     protected $table = 'lessons';
-    protected $fillable = ['id', 'name', 'image', 'description', 'requirement', 'time', 'course_id'];
+    protected $fillable = ['name', 'image', 'description', 'requirement', 'time', 'course_id'];
 
     public function course()
     {
@@ -20,12 +20,7 @@ class Lesson extends Model
         return $this->hasMany(User::class);
     }
 
-    public function getCourseLessonAttribute()
-    {
-        return $this->course;
-    }
-
-    public function getUserLessonAttribute()
+    public function getNumberUserLessonAttribute()
     {
         return $this->user()->count();
     }
