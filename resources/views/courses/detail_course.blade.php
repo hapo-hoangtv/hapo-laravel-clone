@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row mt-5">
         <div class="course-detail-image d-flex justify-content-center col-7">
-            <img src="{{ asset('storage/image/Rectangle 7.png') }}" class="img-fluid p-5">
+            <img src="{{ asset('storage/image/Rectangle 7.png') }}" class="img-fluid">
         </div>
         <div class="ml-1 course-desc p-3 col-4 ml-5">
             <div class="course-desc-title">Descriptions course</div>
@@ -31,8 +31,8 @@
                         @if (count($lessons) > 0)
                             @foreach ($lessons as $key => $lesson)
                                 <div class="d-flex justify-content-between align-items-center p-3 but-learn">
-                                    <p class="my-auto">{{ ++$key }} . ":" . {{ $lesson->name }}</p>
-                                    <button class="btn btn-learn">Learn</button>
+                                    <p class="my-auto">{{ ++$key }} . {{ $lesson->name }}</p>
+                                    <button class="btn btn-learn" onclick="location.href='{{ Route('lesson.show', $lesson->id) }}'">Learn</button>
                                 </div>
                             @endforeach
                             <div class="mt-4 ">
@@ -73,7 +73,7 @@
                         </div>
                     @endforeach
                     <div class="text-center p-4">
-                        <button class="btn btn-learn p-2 px-4" onclick="location.href='#'">View all ours courses</button>
+                        <button class="btn btn-view p-2 px-4" onclick="location.href='#'">View all ours courses</button>
                     </div>
                 </div>
             </div>
