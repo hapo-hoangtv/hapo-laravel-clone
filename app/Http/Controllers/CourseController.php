@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Course;
+use App\Models\Course;
 
 class CourseController extends Controller
 {
@@ -47,7 +47,9 @@ class CourseController extends Controller
      */
     public function show($id)
     {
-        //
+        $courses = Course::findOrFail($id);
+        $lessons = $courses->lesson()->paginate(config('variable.paginateLesson'));
+        return view('courses.detail_course', compact(['courses', 'lessons']));
     }
 
     /**
@@ -82,5 +84,13 @@ class CourseController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getSearch(Request $request)
+    {
+        $courses = Course::where('name', 'like', '%' .$request->key. '%')
+                                ->orWhere('description', 'like', '%' . $request->key. '%')
+                                ->get();
+        return view('courses.search', compact('courses'));
     }
 }
