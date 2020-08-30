@@ -666,10 +666,16 @@
 }
 
 .btn-learn {
-  background-color: #b2d235;
-  box-shadow: inset 0 1.5px 2px #6f8710;
+  background: #B2D235;
+  box-shadow: inset 0px 1.5px 2px #6F8710;
   border-radius: 22px;
   @include font(bold, 15px, "UTM BryantLG", 18px, white);
+}
+
+.btn-view {
+  background-color: #B2D235;
+  border: 1px solid #DEDEDE;
+  @include font(bold, 25px, "UTM BryantLG", 31px, white);
 }
 
 .course-desc {
@@ -702,17 +708,26 @@
     @include font(bold, 25px, "UTM BryantLG", 31px, white);
   }
 
-  .btn-learn {
-    font-size: 18px;
-  }
-
   .other-list {
     background-color: white;
 
     .other-list-item {
       border-top: 1px solid #e2e0e0;
       border-bottom: 1px solid #e2e0e0;
-      @include font(normal, 16px, "UTM BryantLG", 20px, 505353);
+      @include font(normal, 16px, "UTM BryantLG", 20px, #505353);
     }
+  }
+}
+
+.lesson-detail {
+  @include font(normal, 18px, "UTM BryantLG", 26px, #505353);
+
+  .lesson-detail-title {
+    margin: 15px 0;
+    @include font(bold, 25px, "UTM BryantLG", 31px, #505353);
+  }
+
+  .lesson-detail-text {
+    text-align: justify;
   }
 }
