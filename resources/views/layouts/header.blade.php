@@ -18,29 +18,32 @@
                         <a class="nav-link" href="#" data-toggle="modal" data-target="#loginRegister">LOGIN/REGISTER</a>
                     </li>
                     @else
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    <li class="dropdown m-1">
+                        <a href="#" class="dropdown-toggle text-decoration-none" data-toggle="dropdown" role="button" aria-expanded="false">
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
-
                         <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{ route('admin.index') }}" class="text-decoration-none">
+                                    <span><i class="fa fa-tasks" aria-hidden="true"></i> Manage</span>
+                                </a>
+                            </li>
                             <li>
                                 <a href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
+                                             document.getElementById('logout-form').submit();" class="text-decoration-none">
                                     Logout
                                 </a>
-
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     {{ csrf_field() }}
                                 </form>
                             </li>
                         </ul>
                     </li>
-                    @endif
                     <li class="nav-item">
                         <a class="nav-link" href="#">PROFILE</a>
                     </li>
+                    @endif
                 </ul>
             </div> 
         </nav>

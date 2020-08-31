@@ -1,10 +1,10 @@
 <div class="modal fade p-0" id="loginRegister">
     <div class="modal-dialog" role="document">
       <div class="modal-content mt-3 m-auto">
-        <div class="modal-body d-flex flex-column">
+        <div class="modal-body d-flex flex-column p-0">
             <div class="d-flex justify-content-between">
-                <a href="#" class="modal-login col-6 text-center text-decoration-none" id="modalLogin">Login</a>
-                <a href="#" class="modal-register col-6 text-center text-decoration-none" id="modalRegister">Register</a>
+                <button class="modal-login col-6 text-center text-decoration-none btn" id="modalLogin">Login</button>
+                <button class="modal-register col-6 text-center text-decoration-none btn" id="modalRegister">Register</button>
                 <button type="button" class="close-login position-relative" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -13,7 +13,7 @@
                 <form method="POST" action="{{ route('login') }}" class="d-flex flex-column">
                     @csrf
                     <div class="form-group">
-                        <label for="username" class="lable-input">User Name</label>
+                        <label for="username" class="lable-input">User Name:</label>
                         <input id="name" type="text" class="input-text form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
@@ -22,7 +22,7 @@
                             @enderror
                     </div>
                     <div class="form-group">
-                        <label for="password"  class="lable-input">Password</label>
+                        <label for="password"  class="lable-input">Password:</label>
                         <input id="password" type="password" class="input-text form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                             @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -49,8 +49,8 @@
                 <form method="POST" action="{{ route('register') }}" class="d-flex flex-column">
                     @csrf
                     <div class="form-group">
-                        <label for="username" class="lable-input">User Name</label>
-                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                        <label for="username" class="lable-input">User Name:</label>
+                        <input id="name" type="text" class="input-text form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -58,7 +58,7 @@
                             @enderror
                     </div>
                     <div class="form-group">
-                        <label for="email" class="lable-input">Email</label>
+                        <label for="email" class="lable-input">Email:</label>
                         <input id="email" type="email" class="input-text form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                         @error('email')
                         <span class="invalid-feedback" role="alert">
@@ -67,7 +67,7 @@
                     @enderror
                     </div>
                     <div class="form-group">
-                        <label for="password" class="lable-input">Password</label>
+                        <label for="password" class="lable-input">Password:</label>
                         <input id="password" type="password" class="input-text form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
                             @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -79,7 +79,7 @@
                         <label for="re-password" class="lable-input">Repeat Password:</label>
                         <input id="passwordConfirm" type="password" class="input-text form-control" name="password_confirmation" required autocomplete="new-password">
                     </div>
-                    <button type="submit" class="btn btn-primary mb-3 mx-auto p-2 login-btn">
+                    <button type="submit" class="btn btn-login mb-3 mx-auto p-2">
                         {{ __('Register') }}
                     </button>
                 </form>

@@ -717,7 +717,15 @@
     .other-list-item {
       border-top: 1px solid #e2e0e0;
       border-bottom: 1px solid #e2e0e0;
-      @include font(normal, 16px, "UTM BryantLG", 20px, #505353);
+
+      a {
+      color: #505353 !important;
+      @include font(normal, 16px, "UTM BryantLG", 20px, #505353); 
+
+      &:hover {
+        color: #B2D235 !important;
+      }
+      }
     }
   }
 }
