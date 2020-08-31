@@ -419,7 +419,7 @@
 }
 
 .next-left {
-  margin-left: -12px;
+  margin-left: -25px;
   background-color: white;
 
   &:hover {
@@ -428,7 +428,7 @@
 }
 
 .next-right {
-  margin-right: -12px;
+  margin-right: -25px;
   background-color: white;
 
   &:hover {
@@ -550,8 +550,8 @@
 .modal-body {
   .modal-login {
     padding: 20px 0;
-    background-color: #b2d235;
-    @include font(bold, 25px, "UTM BryantLG", 31px, white);
+    background-color: #B2D235;
+    @include font(bold, 25px, "UTM BryantLG", 31px, #FFFFFF);
     &:hover {
       opacity: 0.8;
     }
@@ -559,9 +559,10 @@
 
   .modal-register {
     padding: 20px 0;
-    @include font(bold, 25px, "UTM BryantLG", 31px, #b2d235);
+    @include font(bold, 25px, "UTM BryantLG", 31px, #B2D235);
     &:hover {
-      background-color: #f7f7f7;
+      background-color: #FFFFFF;
+      opacity: 0.8;
     }
   }
 
@@ -611,6 +612,7 @@
   margin-bottom: 20px;
   background-color: #f2f2f2;
   border: 1px solid #e1e1e1;
+  height: 60px;
 }
 
 .btn-login {
@@ -619,6 +621,7 @@
   width: 200px;
   margin-top: 25px;
   margin-bottom: 15px;
+  padding: 9px 70px;
   @include font(bold, 18px, "UTM BryantLG", 22px, white);
 }
 

@@ -11,15 +11,13 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/main.js', 'public/js')
+mix.js('resources/js/app.js', 'public/js')
+   .js('resources/js/main.js', 'public/js')
    .js('resources/js/jquery.min.js', 'public/js')
-    .sass('resources/sass/style.scss', 'public/css')
+   .sass('resources/sass/app.scss', 'public/css')
+    .copy('resources/js/slick.min.js', 'public/js')
     .copy('resources/font', 'public/font')
-    .copy('node_modules/slick-slider/slick/slick.min.js', 'public/js')
-    .copy('node_modules/slick-slider/slick/slick.css', 'public/css')
-    .copy('node_modules/slick-slider/slick/slick-theme.css', 'public/css')
-    .copy('node_modules/font-awesome/css/font-awesome.min.css', 'public/fontawesome')
-    .copy('node_modules/font-awesome/css/font-awesome.css', 'public/fontawesome')
+    .copy('node_modules/@fortawesome', 'public/font')
     .options({
         processCssUrls: false
     });
