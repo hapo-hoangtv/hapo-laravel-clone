@@ -24,19 +24,39 @@
 <!-- //space -->
 <div class="hapo-subject container d-flex justify-content-center">
     <div class="hapolearn-courses d-md-flex flex-column flex-md-row justify-content-center">
-        @foreach($courses as $course)
         <div class="card subject-courses col-md-4 col-12">
-            <img alt="Html Css" class="card-img-top hapolearn-subject subject-html img-fluid" src="{{ asset('storage/image/Laravellogo.png') }}">
+            <img alt="Html Css" class="card-img-top hapolearn-subject subject-html img-fluid" src="{{ asset('storage/image/Rectangle%207.png') }}">
             <div class="card-body hapolearn-card-body">
                 <div class="card-title hapolearn-card-title text-center py-md-0">
-                    {{ $course->name }}
+                    HTML/CSS/js Tutorial
                 </div>
                 <div class="card-text hapolearn-card-text text-center px-xl-3 py-xl-1 m-auto">
-                    {{ $course->description }}
+                    I knew hardly anything about HTML, JS, and CSS before entering New Media. I had coded quite a bit, but never touched anything in regards to web development.
                 </div><a class="d-flex justify-content-center text-decoration-none" href="#"><button class="btn hapolearn-courses-btn mb-3 m-md-0 pl-md-4 pr-md-4 mt-md-3 mt-xl-3 mb-xl-3">Take This Course</button></a>
             </div>
         </div>
-        @endforeach
+        <div class="card subject-courses col-md-4 col-12">
+            <img alt="Laravel" class="card-img-top hapolearn-subject subject-laravel img-fluid" src="{{ asset('storage/image/Laravellogo.png') }}">
+            <div class="card-body hapolearn-card-body">
+                <div class="card-title hapolearn-card-title text-center py-xl-0">
+                    LARAVEL Tutorial
+                </div>
+                <div class="card-text hapolearn-card-text text-center px-xl-3 py-xl-1 m-auto">
+                    I knew hardly anything about HTML, JS, and CSS before entering New Media. I had coded quite a bit, but never touched anything in regards to web development.
+                </div><a class="d-flex justify-content-center text-decoration-none" href="#"><button class="btn hapolearn-courses-btn mb-3 m-md-0 pl-md-4 pr-md-4 mt-md-3 mt-xl-3 mb-xl-3">Take This Course</button></a>
+            </div>
+        </div>
+        <div class="card subject-courses col-md-4 col-12">
+            <img alt="PHP" class="card-img-top hapolearn-subject subject-php img-fluid" src="{{ asset('storage/image/Rectangle%2015.png') }}">
+            <div class="card-body hapolearn-card-body">
+                <div class="card-title hapolearn-card-title text-center py-xl-0">
+                    PHP Tutorial
+                </div>
+                <div class="card-text hapolearn-card-text text-center px-xl-3 py-xl-1 m-auto">
+                    I knew hardly anything about HTML, JS, and CSS before entering New Media. I had coded quite a bit, but never touched anything in regards to web development.
+                </div><a class="d-flex justify-content-center text-decoration-none" href="#"><button class="btn hapolearn-courses-btn mb-3 m-md-0 pl-md-4 pr-md-4 mt-md-3 mt-xl-3 mb-xl-3">Take This Course</button></a>
+            </div>
+        </div>
     </div>
 </div>
 <!-- //subject -->
@@ -45,19 +65,39 @@
         <span class="underline">Other courses</span>
     </div>
     <div class="hapolearn-othercourses mt-5 d-flex flex-column flex-md-row justify-content-center">
-        @foreach($otherCourses as $ohterCourse)
         <div class="card subject-courses col-md-4 col-12">
-            <img alt="CSS" class="card-img-top hapolearn-subject subject-css img-fluid" src="{{ asset('storage/image/Rails.png') }}">
+            <img alt="CSS" class="card-img-top hapolearn-subject subject-css img-fluid" src="{{ asset('storage/image/CSS.png') }}">
             <div class="card-body hapolearn-card-body">
                 <div class="card-title hapolearn-card-title text-center py-xl-0">
-                    {{ $otherCourse->name }}
+                    CSS Tutorial
                 </div>
                 <div class="card-text hapolearn-card-text text-center px-xl-3 py-xl-1 m-auto">
-                    {{ $otherCourse->description }}
+                    I knew hardly anything about HTML, JS, and CSS before entering New Media. I had coded quite a bit, but never touched anything in regards to web development.
                 </div><a class="d-flex justify-content-center text-decoration-none" href="#"><button class="btn hapolearn-courses-btn mb-3 m-md-0 pl-md-4 pr-md-4 mt-md-3 mt-xl-3 mb-xl-3">Take This Course</button></a>
             </div>
         </div>
-        @endforeach
+        <div class="card subject-courses col-md-4 col-12">
+            <img alt="Rails" class="card-img-top hapolearn-subject subject-rails img-fluid" src="{{ asset('storage/image/Rails.png') }}">
+            <div class="card-body hapolearn-card-body">
+                <div class="card-title hapolearn-card-title text-center py-xl-0">
+                    Ruby on rails Tutorial
+                </div>
+                <div class="card-text hapolearn-card-text text-center px-xl-3 py-xl-1 m-auto">
+                    I knew hardly anything about HTML, JS, and CSS before entering New Media. I had coded quite a bit, but never touched anything in regards to web development.
+                </div><a class="d-flex justify-content-center text-decoration-none" href="#"><button class="btn hapolearn-courses-btn mb-3 m-md-0 pl-md-4 pr-md-4 mt-md-3 mt-xl-3 mb-xl-3">Take This Course</button></a>
+            </div>
+        </div>
+        <div class="card subject-courses col-md-4 col-12">
+            <img alt="Java" class="card-img-top hapolearn-subject subject-java img-fluid" src="{{ asset('storage/image/java%201.png') }}">
+            <div class="card-body hapolearn-card-body">
+                <div class="card-title hapolearn-card-title text-center py-xl-0">
+                    Java Tutorial
+                </div>
+                <div class="card-text hapolearn-card-text text-center px-xl-3 py-xl-1 m-auto">
+                    I knew hardly anything about HTML, JS, and CSS before entering New Media. I had coded quite a bit, but never touched anything in regards to web development.
+                </div><a class="d-flex justify-content-center text-decoration-none" href="#"><button class="btn hapolearn-courses-btn mb-3 m-md-0 pl-md-4 pr-md-4 mt-md-3 mt-xl-3 mb-xl-3">Take This Course</button></a>
+            </div>
+        </div>
     </div><a class="hapo-all-courses text center my-md-5 d-flex align-items-center justify-content-center text-center text-decoration-none" href="">View All Our Courses <img class="img-fluid" src="{{ asset('storage/image/muiten.png') }}"></a>
 </div>
 <!-- //othercourse -->
@@ -191,7 +231,6 @@
 
 @section('script')
 <script> 
-
     function closeMes(id) {
       var closeBoxchat = document.getElementById(id);
       closeBoxchat.style.display = "none";
@@ -205,5 +244,5 @@
           boxchat.style.display = "block";
       }
     }
-    </script>
+</script>
 @endsection
