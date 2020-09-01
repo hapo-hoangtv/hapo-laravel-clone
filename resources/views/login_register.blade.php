@@ -76,7 +76,7 @@
                             @enderror
                     </div>
                     <div class="form-group">
-                        <label for="re-password" class="lable-input">Repeat Password:</label>
+                        <label for="re-password" class="lable-input">Confirm Password:</label>
                         <input id="passwordConfirm" type="password" class="input-text form-control" name="password_confirmation" required autocomplete="new-password">
                     </div>
                     <button type="submit" class="btn btn-login mb-3 mx-auto p-2">
