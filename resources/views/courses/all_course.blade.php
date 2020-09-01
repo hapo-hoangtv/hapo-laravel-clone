@@ -37,7 +37,7 @@
                                     </div>
                                     <div class="course-quizes col-xl-4 text-center">
                                         <a href="#" class="card-link mb-2 d-block">Quizzes</a>
-                                        <p class="card-number mb-0">{{ $course->number_quizze }}</p>
+                                        <p class="card-number mb-0">16,882</p>
                                     </div>
                                 </div>
                             </div>
