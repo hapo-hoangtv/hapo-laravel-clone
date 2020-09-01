@@ -23,7 +23,11 @@
                                     <div class="course-content col-xl-9  offset-3">
                                         <h5 class="card-title">{{ $course['name'] }}</h5>
                                         <p class="card-text mb-0 text-justify">{{ $course['description'] }}</p>
+                                        @if(Auth::check()) 
                                         <a href="{{ Route('course.show',$course->id) }}" class="card-link-more col-4 offset-8 d-block text-center text-decoration-none py-xl-2 my-xl-3">More</a>
+                                        @else 
+                                        <a href="{{ Route('course.index') }}" class="card-link-more col-4 offset-8 d-block text-center text-decoration-none py-xl-2 my-xl-3">More</a>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="course-link row">

@@ -3,14 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Course;
+use App\Models\Course;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $courses = Course::orderBy('id', 'asc')->limit(3)->get();
-        $otherCourses = Course::orderBy('id', 'desc')->limit(3)->get();
-        return view('index', compact('courses', 'otherCourses'));
+        $courses = Course::limit(6)->orderBy('id', 'desc')->get();
+        return view('index', compact('courses'));
     }
 }

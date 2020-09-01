@@ -24,4 +24,6 @@ Route::resource('course', 'CourseController');
 Route::get('/search-course', 'CourseController@getSearch')->name('course.search');
 Route::get('/search-lesson/{id}', 'LessonController@getSearchLesson')->name('lesson.search');
 Route::resource('lesson', 'LessonController');
-Route::get('admin', 'AdminController@index')->name('admin.index');
+Route::group(['middleware' => 'teacher'], function () {
+    Route::get('admin', 'AdminController@index')->name('admin.index');
+});
