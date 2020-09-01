@@ -94,5 +94,5 @@ class CourseController extends Controller
                                 ->orWhere('description', 'like', '%' . $request->key. '%')
                                 ->get();
         return view('courses.search', compact('courses'));
-    }  
+    }
 }
