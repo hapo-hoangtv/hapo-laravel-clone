@@ -1,5 +1,7 @@
 <?php
 return [
-    'paginate' => env('PER_PAGE', '10'),
-    'paginateLesson' => env('PAGE_LESSON', '20'),
+    'paginate' => '8',
+    'paginateLesson' => '8',
+    'link' => 'public/avatar/',
+    'otherCourse' => '5',
 ];

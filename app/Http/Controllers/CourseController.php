@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Course;
+use App\Models\Lesson;
 
 class CourseController extends Controller
 {
@@ -48,8 +49,9 @@ class CourseController extends Controller
     public function show($id)
     {
         $courses = Course::findOrFail($id);
+        $otherCourses = Course::inRandomOrder()->limit(config('variable.otherCourse'))->get();
         $lessons = $courses->lesson()->paginate(config('variable.paginateLesson'));
-        return view('courses.detail_course', compact(['courses', 'lessons']));
+        return view('courses.detail_course', compact(['courses', 'lessons', 'otherCourses']));
     }
 
     /**
