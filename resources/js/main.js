@@ -53,3 +53,14 @@ $('.close-login').click(function() {
   $('.modal').modal('hide');
 })
 
+var fullRating = $('#fullStarVal').val();
+var goodRating = $('#goodRatingVal').val();
+var normalRating = $('#normalRatingVal').val();
+var badRating = $('#badRatingVal').val();
+var veryBadRating = $('#veryBadRatingVal').val();
+$('#fullStar').width(fullRating);
+$('#goodRating').width(goodRating);
+$('#normalRating').width(normalRating);
+$('#badRating').width(badRating);
+$('#veryBadRating').width(veryBadRating);
+

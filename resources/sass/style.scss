@@ -641,10 +641,19 @@
   background-color: #3f6185;
 }
 
+.detail-course-index {
+  background: #F2F2F2;
+}
+
+.detail-lesson-index {
+  background: #F2F2F2;
+}
+
 .course-detail {
   margin-top: 30px;
-
+  
   .course-detail-lesson {
+    border-radius: 10px;
     background-color: white;
     
     .course-lesson-top {
@@ -660,11 +669,23 @@
 
   .course-detail-title {
     margin-right: 60px;
+    color: #505353;
+  }
+  
+  .course-detail-title.active {
+    color: #B2D235;
+    border-bottom: 2px solid #B2D235;
+    padding-bottom: 16px;
   }
 
   .but-learn {
     border-top: 1px solid #e2e0e0;
     border-bottom: 1px solid #e2e0e0;
+
+    &:hover {
+      color: #B2D235;
+      cursor: pointer;
+    }
   }
 }
 
@@ -678,12 +699,14 @@
 .btn-view {
   background-color: #B2D235;
   border: 1px solid #DEDEDE;
+  border-radius: 22px;
   @include font(bold, 25px, "UTM BryantLG", 31px, white);
 }
 
 .course-desc {
   background-color: white;
   color: #505353;
+  border: 1px solid #D1D1D1;
 
   .course-desc-title {
     @include font(bold, 25px, "UTM BryantLG", 31px, #505353);
@@ -694,8 +717,13 @@
   }
 }
 
+.course-lesson-name {
+  margin-bottom: 20px;
+}
+
 .course-info {
   margin-top: 30px;
+  border: 1px solid #D1D1D1;
   @include font(normal, 25px, "UTM BryantLG", 31px, #bdb9b9);
 
   .course-info-text {
@@ -720,7 +748,8 @@
 
       a {
       color: #505353 !important;
-      @include font(normal, 16px, "UTM BryantLG", 20px, #505353); 
+      letter-spacing: -0.02em;
+      @include font(bold, 16px, "UTM BryantLG", 20px, #505353); 
 
       &:hover {
         color: #B2D235 !important;
@@ -730,15 +759,172 @@
   }
 }
 
+.course-lesson-image {
+  padding: 90px;
+  width: 700px;
+  border-radius: 10px;
+  background-color: #3f6185;
+}
+
+.course-lesson-detail {
+  margin-top: -30px;
+}
+
 .lesson-detail {
   @include font(normal, 18px, "UTM BryantLG", 26px, #505353);
 
   .lesson-detail-title {
     margin: 15px 0;
+    -webkit-text-stroke-width: 0.3px;
     @include font(bold, 25px, "UTM BryantLG", 31px, #505353);
   }
 
   .lesson-detail-text {
     text-align: justify;
   }
+}
+
+.teacher-info {
+  
+  .teacher-info-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .teacher-info-name {
+    @include fontUtm(bold, 18px, 22px);
+  }
+
+  .teacher-info-exp {
+    color: #bdb9b9;
+    @include fontUtm(normal, 14px, 17px);
+  }
+
+  .teacher-info-gplus {
+    margin: 0 10px;
+    border-radius: 50%;
+    padding: 0 3.5px;
+    border: 0.5px solid #f44336;
+    color: #f44336;
+  }
+
+  .teacher-info-fb {
+    margin: 0 10px;
+    border-radius: 50%;
+    padding: 1px 8.5px;
+    border: 0.5px solid #1976d2;
+    color: #1976d2;
+  }
+
+  .teacher-info-slack {
+    margin: 0 10px;
+    border-radius: 50%;
+    color: #ff9800;
+    border: 0.5px solid #e91e63;
+    padding: 0 5px;
+  }
+
+  .teacher-text {
+    text-align: justify;
+    color: #949292;
+    @include fontUtm(normal, 18px, 26px);
+  }
+}
+
+.lesson-program {
+  color: $lesson-tittle-color;
+  @include fontUtm(bold, 18px, 22px);
+
+  i {
+    color: #b2d235;
+  }
+
+  .porgram-list {
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+  }
+
+  .program-type {
+    color: #bdb9b9;
+    @include fontUtm(normal, 14px, 17px);
+  }
+}
+
+.rating {
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+
+  .rating-star {
+    color: white;
+    background-color: $lesson-tittle-color;
+    border-radius: 5px;
+
+    .rating-star-number {
+      @include fontUtm(bold, 60px, 70px);
+    }
+
+    .rating-times {
+      @include fontUtm(bold, 16px, 20px);
+    }
+
+    i {
+      font-size: 20px;
+      color: #ffd567;
+    }
+  }
+
+  .total-star {
+    color: $lesson-tittle-color;
+    border: 1px solid #dfdfdf;
+    border-radius: 5px;
+    @include fontUtm(normal, 16px, 20px);
+
+    .total-star-title {
+      color: $lesson-tittle-color;
+      @include fontUtm(bold, 16px, 20px);
+    }
+  }
+}
+
+.progress {
+  width: 320px;
+  height: 7px;
+}
+
+.user-reviews-title {
+  color: $lesson-tittle-color;
+  @include fontUtm(bold, 18px, 22px);
+}
+
+.user-review-item {
+  border-bottom: 1px solid $border-color;
+
+  .user-review-item-info {
+    img {
+      width: 40px;
+      height: 40px;
+    }
+
+    i {
+      font-size: 14px;
+      color: #ffd567;
+    }
+
+    .review-time {
+      color: #bdb9b9;
+      @include fontUtm(normal, 14px, 17px);
+    }
+  }
+
+  .user-review-text {
+    text-align: justify;
+    color: #949292;
+    @include fontUtm(normal, 18px, 26px);
+  }
+}
+
+.user-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
 }

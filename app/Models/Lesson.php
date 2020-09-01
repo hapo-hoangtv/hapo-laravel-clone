@@ -24,4 +24,34 @@ class Lesson extends Model
     {
         return $this->user()->count();
     }
+
+    public function lessonReviews()
+    {
+        return $this->hasMany(Review::class)->whereNull('course_id');
+    }
+
+    public function getLessonReviewTimesAttribute()
+    {
+        return $this->lessonReviews->count();
+    }
+
+    public function getLessonAvgStarAttribute()
+    {
+        $avgStar = $this->lessonReviews->avg('rating');
+        return floor($avgStar);
+    }
+
+    public function scopeLessonRatingTimes($query, $star)
+    {
+        $query = $this->lessonReviews->where('rating', $star)->count();
+        return $query;
+    }
+
+    public function scopeLessonPrecentRating($query, $star)
+    {
+        $query = $this->LessonRatingTimes($star);
+        $allRatingTimes = ($this->lesson_review_times) ?: 1;
+        $percent = $query / $allRatingTimes * 100;
+        return $percent;
+    }
 }
