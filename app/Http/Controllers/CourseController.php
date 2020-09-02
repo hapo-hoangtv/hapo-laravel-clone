@@ -90,9 +90,10 @@ class CourseController extends Controller
 
     public function getSearch(Request $request)
     {
-        $courses = Course::where('name', 'like', '%' .$request->key. '%')
-                                ->orWhere('description', 'like', '%' . $request->key. '%')
-                                ->get();
-        return view('courses.search', compact('courses'));
+        $search = $request->get('search');
+        $courses = Course::where('name', 'like', '%' . $search . '%')
+                                ->orWhere('description', 'like', '%'  . $search. '%')
+                                ->paginate(2);
+        return view('courses.all_course', compact('courses', 'search'));
     }
 }
