@@ -2,6 +2,6 @@
 return [
     'paginate' => '8',
     'paginateLesson' => '8',
-    'link' => 'public/avatar/',
+    'link' => 'public/image/',
     'otherCourse' => '5',
 ];
