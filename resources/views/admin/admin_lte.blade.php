@@ -61,7 +61,7 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="index3.html" class="brand-link">
-            <span class="brand-text font-weight-light">AdminLTE 3</span>
+            <span class="brand-text font-weight-light">Admin HapoLearn</span>
         </a>
 
         <!-- Sidebar -->
@@ -69,7 +69,7 @@
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="info">
-                    <a href="#" class="d-block">Alexander Pierce</a>
+                    <a href="#" class="d-block">HapoSoft</a>
                 </div>
             </div>
 
@@ -82,7 +82,30 @@
                         <a href="#" class="nav-link active">
                             <i class="nav-icon fa fa-tachometer-alt"></i>
                             <p>
-                                Dashboard
+                                Quản lý Courses
+                                <i class="right fa fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ Route('admin.courses.index') }}" class="nav-link active">
+                                    <i class="fa fa-circle nav-icon"></i>
+                                    <p>Danh sách khóa học</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ Route('admin.courses.create') }}" class="nav-link">
+                                    <i class="fa fa-circle nav-icon"></i>
+                                    <p>Thêm khóa học</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-treeview menu-open">
+                        <a href="#" class="nav-link active">
+                            <i class="nav-icon fa fa-tachometer-alt"></i>
+                            <p>
+                                Quản lý Users
                                 <i class="right fa fa-angle-left"></i>
                             </p>
                         </a>
@@ -90,19 +113,13 @@
                             <li class="nav-item">
                                 <a href="#" class="nav-link active">
                                     <i class="fa fa-circle nav-icon"></i>
-                                    <p>Dashboard v1</p>
+                                    <p>Danh sách học viên</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <i class="fa fa-circle nav-icon"></i>
-                                    <p>Dashboard v2</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="fa fa-circle nav-icon"></i>
-                                    <p>Dashboard v3</p>
+                                    <p>Thêm học viên</p>
                                 </a>
                             </li>
                         </ul>
@@ -122,7 +139,7 @@
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
-        <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+        <strong>Copyright &copy; 2020 <a href="#">AdminLTE.HapoSoft</a>.</strong>
         All rights reserved.
         <div class="float-right d-none d-sm-inline-block">
             <b>Version</b> 3.0.4

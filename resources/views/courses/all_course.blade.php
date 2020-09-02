@@ -5,10 +5,10 @@
         <div class="filter-find row my-3">
             <div class="d-flex align-items-center">
                 <form action="{{ Route('course.search') }}" method="GET">
-                    <button class="btn filter-btn mr-2"><i class="fas fa-sliders-h mr-1"></i>Filter</button>
-                    <input type="text" placeholder="Search..." class="find-input" name="key">
-                    <i class="fas fa-search search-icon"></i>
                     {{ csrf_field() }}
+                    <button class="btn filter-btn mr-2"><i class="fas fa-sliders-h mr-1"></i>Filter</button>
+                    <input type="text" placeholder="Search..." class="find-input" name="search">
+                    <i class="fas fa-search search-icon"></i>
                 </form>
             </div>
         </div>
@@ -19,14 +19,14 @@
                         <div class="card mx-2">
                             <div class="card-body">
                                 <div class="course-body">
-                                    <img class="float-left mr-4" src="{{ asset($course['image']) }}" alt="HTML">
+                                    <img class="float-left mr-4" src="{{ asset('./storage/image/'. $course['image']) }}" width="89px" height="89px" style="border-radius:50%" alt="HTML">
                                     <div class="course-content col-xl-9  offset-3">
                                         <h5 class="card-title">{{ $course['name'] }}</h5>
                                         <p class="card-text mb-0 text-justify">{{ $course['description'] }}</p>
                                         @if(Auth::check()) 
                                         <a href="{{ Route('course.show',$course->id) }}" class="card-link-more col-4 offset-8 d-block text-center text-decoration-none py-xl-2 my-xl-3">More</a>
                                         @else 
-                                        <a href="{{ Route('course.index') }}" class="card-link-more col-4 offset-8 d-block text-center text-decoration-none py-xl-2 my-xl-3">More</a>
+                                        <a href="{{ Route('index') }}" class="card-link-more col-4 offset-8 d-block text-center text-decoration-none py-xl-2 my-xl-3">More</a>
                                         @endif
                                     </div>
                                 </div>
@@ -52,6 +52,6 @@
                 <h1>No course found!</h1>
             @endif
         </div>
-    {{ $courses->links() }}
+    {{ $courses->appends($_GET)->links() }}
     </div>
 @endsection
