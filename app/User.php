@@ -12,13 +12,18 @@ class User extends Authenticatable
 
     const ROLE_USER = 1;
     const ROLE_TEACHER = 2;
+
+    const ROLE = [
+        'user' => 'ROLE_USER',
+        'teacher' => 'ROLE_TEACHER',
+    ];
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'id', 'name', 'email', 'password', 'phone', 'role_id'
+        'id', 'name', 'email', 'password', 'phone', 'avatar', 'role_id'
     ];
 
     /**
@@ -42,5 +47,10 @@ class User extends Authenticatable
     public function course()
     {
         return $this->belongsToMany('App\Course', 'course_user');
+    }
+
+    public function getIsTeacherAttribute()
+    {
+        return $this->role_id == self::ROLE['teacher'];
     }
 }

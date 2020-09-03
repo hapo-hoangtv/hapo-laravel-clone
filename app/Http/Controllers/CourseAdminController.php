@@ -9,22 +9,12 @@ use App\Http\Requests\CourseRequest;
 
 class CourseAdminController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $courses = Course::paginate(config('variable.paginate'));
         return view('admin.courses.index', compact('courses'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('admin.courses.create');

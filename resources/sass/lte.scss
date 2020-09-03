@@ -7,3 +7,19 @@
 
 // AdminLTE
 @import '~admin-lte/dist/css/AdminLTE.css';
+
+.find-input {
+  width: 355px;
+  background: #ffffff;
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+  padding: 5px 5px;
+}
+
+.search-icon {
+  font-size: 18px;
+  top: 7px;
+  position: relative;
+  right: 25px;
+}
+

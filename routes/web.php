@@ -27,5 +27,7 @@ Route::resource('lesson', 'LessonController');
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'teacher'], function () {
     Route::get('/', 'AdminController@index')->name('index');
     Route::resource('courses', 'CourseAdminController');
-    Route::get('/search', 'CourseAdminController@search')->name('course.search');
+    Route::get('/search-course', 'CourseAdminController@search')->name('course.search');
+    Route::resource('users', 'UserAdminController');
+    Route::get('/search-user', 'UserAdminController@search')->name('user.search');
 });
