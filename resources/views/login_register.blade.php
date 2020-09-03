@@ -41,7 +41,7 @@
                         {{ __('Login') }}
                     </button>
                 </form>
-                <p class="text-center">Login With</p>
+                <p class="text-center mb-4">Login With</p>
                 <button class="mb-3 w-100 login-google btn p-2"><i class="fab fa-google-plus-g mr-2"></i>Google</button>
                 <button class="mb-3 w-100 login-fb btn p-2"><i class="fab fa-facebook-f mr-2"></i>Facebook</button>
             </div>

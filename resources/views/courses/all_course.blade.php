@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="all-course row">
-            @if ($courses)
+            @if (count($courses) > 0)
                 @foreach ($courses as $course)
                     <div class="course-program col-xl-6 row mb-4">
                         <div class="card mx-2">

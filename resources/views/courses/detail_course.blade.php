@@ -16,9 +16,13 @@
             <div class="course-detail d-flex flex-column justify-content-center">
                 <div class="course-detail-lesson p-3">
                     <div class="course-lesson-top d-flex mb-4">
-                        <div class="pb-3"><a href="#" class="course-detail-title text-decoration-none active">Lesson</a></div>
-                        <div class="pb-3"><a href="#" class="course-detail-title text-decoration-none">Teacher</a></div>
-                        <div class="pb-3"><a href="#" class="course-detail-title text-decoration-none">Reviews</a></div>
+                        <nav>
+                            <div class="nav" id="" role="tablist">
+                                <a class="course-detail-title text-decoration-none pb-3 active" id="nav-lessons-tab" data-toggle="tab" href="#nav-lessons" role="tab" aria-controls="nav-lessons" aria-selected="true">Lessons</a>
+                                <a class="course-detail-title text-decoration-none pb-3" id="nav-teacher-tab" data-toggle="tab" href="#nav-teacher" role="tab" aria-controls="nav-teacher" aria-selected="false">Teacher</a>
+                                <a class="course-detail-title text-decoration-none pb-3" id="nav-reviews-tab" data-toggle="tab" href="#nav-reviews" role="tab" aria-controls="nav-reviews" aria-selected="false">Reviews</a>
+                            </div>
+                        </nav>
                     </div>
                     <div class="filter-find mb-3">
                         <div class="d-flex align-items-center">

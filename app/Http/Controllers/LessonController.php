@@ -11,8 +11,8 @@ class LessonController extends Controller
     public function show($id)
     {
         $lesson = Lesson::findOrFail($id);
-        $courses = Course::latest()->get();
-        return view('courses.detail_lesson', compact(['lesson', 'courses']));
+        $otherCourses = Course::latest()->limit(config('variable.otherCourse'))->get();
+        return view('courses.detail_lesson', compact(['lesson', 'otherCourses']));
     }
 
     public function getSearchLesson(Request $request, $id)
