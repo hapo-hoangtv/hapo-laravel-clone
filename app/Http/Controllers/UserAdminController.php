@@ -20,7 +20,8 @@ class UserAdminController extends Controller
         return view('admin.users.create');
     }
 
-    public function uploadImageAvatar($image) {
+    public function uploadImageAvatar($image)
+    {
         $avatar = uniqid(). "_" .$image->getClientOriginalName();
         $image->storeAs(config('variable.link'), $avatar);
         return $avatar;
