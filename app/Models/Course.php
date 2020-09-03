@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
 
 class Course extends Model
 {
@@ -24,7 +25,7 @@ class Course extends Model
         return $this->belongsToMany(Tag::class, 'course_tag');
     }
 
-    public function getNumberUserCourseAttribute()
+    public function getNumberUserAttribute()
     {
         return $this->user()->count();
     }
