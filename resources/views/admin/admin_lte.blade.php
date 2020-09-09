@@ -111,13 +111,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="#" class="nav-link active">
+                                <a href="{{ Route('admin.users.index') }}" class="nav-link active">
                                     <i class="fa fa-circle nav-icon"></i>
                                     <p>Danh sách học viên</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{ Route('admin.users.create') }}" class="nav-link">
                                     <i class="fa fa-circle nav-icon"></i>
                                     <p>Thêm học viên</p>
                                 </a>

@@ -1,20 +1,20 @@
 @extends('admin.admin_lte')
 @section('title','listcourse')
 @section('contents')
+
 @if(Session::has('message'))
         <div class="alert alert-success">{{ Session::get('message') }}</div>
 @endif         
     <center><h2>Danh sách khoá học</h2></center>
-    <div class="col-md-4 mb-3">
-        <form action="{{ Route('admin.course.search') }}" method="GET">
-            {{ csrf_field() }}
-            <div class="input-group">
-                <input type="text" name="search" class="form-control">
-                <span class="form-group-prepend ml-1">
-                    <input type="submit" class="btn btn-primary" value="Search">
-                </span>
-            </div>
-        </form>
+    <div class="filter-find">
+        <div class="d-flex align-items-center">
+            <form action="{{ Route('admin.course.search') }}" method="GET">
+                <div class="input-group">
+                    <input type="text" placeholder="Search..." class="find-input mb-3" name="search" value="{{ request('search') }}">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+            </form>
+        </div>
     </div>
     <table class="table table-striped" border="1">
     <thead>
@@ -38,7 +38,7 @@
         <td>{{ $course['description'] }}</td>
         <td>{{ $course['price'] }}</td>
         <td>{{ $course['time'] }}</td>
-        <td><a href="{{ Route('admin.courses.edit', $course['id']) }}">Sửa</a></td>
+        <td><a href="{{ Route('admin.courses.edit', $course['id']) }}" class="btn btn-primary">Sửa</a></td>
         <td>
             <form action="{{ Route('admin.courses.destroy', $course['id']) }}" method="post">
                 @method('DELETE')

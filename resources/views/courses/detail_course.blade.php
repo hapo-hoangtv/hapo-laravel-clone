@@ -28,9 +28,8 @@
                         <div class="d-flex align-items-center">
                             <form action="{{ Route('lesson.search', $courses->id) }}" method="GET">
                                 <button class="btn filter-btn mr-2"><i class="fas fa-sliders-h mr-1"></i>Filter</button>
-                                <input type="text" placeholder="Search..." class="find-input" name="search">
+                                <input type="text" placeholder="Search..." class="find-input" name="search" value="{{ request('search') }}">
                                 <i class="fas fa-search search-icon"></i>
-                                {{ csrf_field() }}
                             </form>    
                         </div>
                     </div>
