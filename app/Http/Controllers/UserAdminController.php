@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
 class UserAdminController extends Controller
@@ -38,26 +39,23 @@ class UserAdminController extends Controller
             'email' => $request->email,
             'phone' => $request->phone,
             'avatar' => $request->avatar,
-            'role_id' => $request->role_id
+            'role_id' => $request->role,
+            'password' => bcrypt('password')
         ]);
         return redirect('admin/users')->with('message', __('messages.success.add'));
     }
         
-    public function show($id)
-    {
-        //
-    }
-
     public function edit($id)
     {
         $users = User::findOrFail($id);
         return view('admin.users.edit', compact('users'));
     }
 
-    public function update(UserRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $data = $request->all();
         $users = User::find($id);
+        $data['password'] = bcrypt('password');
         if ($request->hasFile('avatar')) {
             $image = $users->avatar;
             Storage::delete(config('variable.link').$image);
@@ -77,7 +75,7 @@ class UserAdminController extends Controller
     public function search(Request $request)
     {
         $search = $request->get('search');
-        $users = User::where('name', 'like', '%' . $search . '%')->paginate(2);
+        $users = User::where('name', 'like', '%' . $search . '%')->paginate(config('variable.paginateLesson'));
         return view('admin.users.index', compact(['search', 'users']));
     }
 }

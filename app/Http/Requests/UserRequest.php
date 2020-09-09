@@ -26,9 +26,10 @@ class UserRequest extends FormRequest
         return [
             'name' => 'required',
             'email' => 'required',
+            'password' => 'required',
             'phone' => 'numeric',
-            'avatar' => 'avatar',
-            'role_id' => 'required'
+            'avatar' => 'image',
+            'role' => 'required'
         ];
     }
 
@@ -37,9 +38,10 @@ class UserRequest extends FormRequest
         return [
             'name.required' => 'Không được để trống',
             'email.required' => 'Không được để trống',
+            'password.required' => 'Không được để trống',
             'phone.numeric' => 'Phải là định dạng số',
-            'avatar.avatar' => 'Phải là ảnh',
-            'role_id.required' => 'Không được để trống'
+            'avatar.image' => 'Phải là ảnh',
+            'role.required' => 'Không được để trống'
         ];
     }
 }

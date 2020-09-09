@@ -24,8 +24,17 @@
         @endif
     </div>
     <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="" name="password" placeholder="Password"/>
+        @if ($errors->has('password'))
+        <div class="alert alert-danger">
+            {{ $errors->first('password') }}
+        </div>
+        @endif
+    </div>
+    <div class="form-group">
         <label for="phone">Phone</label>
-        <input type="text" class="form-control" id="" name="Phone" placeholder="Số điện thoại"/>
+        <input type="text" class="form-control" id="" name="phone" placeholder="Số điện thoại"/>
         @if ($errors->has('phone'))
         <div class="alert alert-danger">
             {{ $errors->first('phone') }}
@@ -34,7 +43,7 @@
     </div>
     <div class="form-group">
         <label for="avatar">Avatar</label>
-        <input type="file" class="form-control" id="" name="avatar" placeholder="Avatar" />
+        <input type="file" class="" id="" name="avatar" placeholder="Avatar" />
         @if ($errors->has('avatar'))
         <div class="alert alert-danger">
             {{ $errors->first('avatar') }}
@@ -43,9 +52,9 @@
     </div>
     <div class="form-group">
         <label for="role">Role</label><br>
-        <input class="form-check-input ml-2" type="radio" name="role" id="1" value="{{ App\User::ROLE['user'] }}" {{ old('role_id') ==  App\User::ROLE['user'] ? 'checked' : '' }}>
+        <input class="form-check-input ml-2" type="radio" name="role" id="1" value="{{ App\User::ROLE_USER }}" checked>
         <label for="1" class="ml-4">User</label>
-        <input class="form-check-input ml-4" type="radio" name="role" id="2" value="{{ App\User::ROLE['teacher'] }}" {{ old('role_id') ==  App\User::ROLE['teacher'] ? 'checked' : '' }}>
+        <input class="form-check-input ml-4" type="radio" name="role" id="2" value="{{ App\User::ROLE_TEACHER }}">
         <label for="2" class="ml-5">Teacher</label>
         @if ($errors->has('role'))
         <div class="alert alert-danger">

@@ -7,12 +7,9 @@
     <center><h2>Danh sách User</h2></center>
     <div class="col-md-4 mb-3">
         <form action="{{ Route('admin.user.search') }}" method="GET">
-            {{ csrf_field() }}
             <div class="input-group">
-                <input type="text" name="search" class="form-control">
-                <span class="form-group-prepend ml-1">
-                    <input type="submit" class="btn btn-primary" value="Search">
-                </span>
+                <input type="text" placeholder="Search..." class="find-input mb-3" name="search" value="{{ request('search') }}">
+                <i class="fas fa-search search-icon"></i>
             </div>
         </form>
     </div>
