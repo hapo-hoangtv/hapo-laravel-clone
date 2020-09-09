@@ -5,13 +5,15 @@
         <div class="alert alert-success">{{ Session::get('message') }}</div>
 @endif         
     <center><h2>Danh sách User</h2></center>
-    <div class="col-md-4 mb-3">
-        <form action="{{ Route('admin.user.search') }}" method="GET">
-            <div class="input-group">
-                <input type="text" placeholder="Search..." class="find-input mb-3" name="search" value="{{ request('search') }}">
-                <i class="fas fa-search search-icon"></i>
-            </div>
-        </form>
+    <div class="filter-find">
+        <div class="d-flex align-items-center">
+            <form action="{{ Route('admin.user.search') }}" method="GET">
+                <div class="input-group">
+                    <input type="text" placeholder="Search..." class="find-input mb-3" name="search" value="{{ request('search') }}">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+            </form>
+        </div>    
     </div>
     <table class="table table-striped" border="1">
     <thead>
