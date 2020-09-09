@@ -77,7 +77,7 @@ class CourseAdminController extends Controller
     public function search(Request $request)
     {
         $search = $request->get('search');
-        $courses = Course::where('name', 'like', '%' . $search . '%')->paginate(2);
+        $courses = Course::where('name', 'like', '%' . $search . '%')->paginate(config('variable.paginateLesson'));
         return view('admin.courses.index', compact(['search', 'courses']));
     }
 }
