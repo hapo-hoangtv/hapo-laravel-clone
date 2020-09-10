@@ -31,3 +31,5 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'teacher'],
     Route::resource('users', 'UserAdminController');
     Route::get('/search-user', 'UserAdminController@search')->name('user.search');
 });
+Route::post('join-course/{id}', "CourseController@joinCourse")->name('join.course');
+Route::post('leave-course/{id}', "CourseController@leaveCourse")->name('leave.course');

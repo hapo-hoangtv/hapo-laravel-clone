@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\User;
+use App\Models\Lesson;
+use Illuminate\Support\Facades\Auth;
 
 class Course extends Model
 {
@@ -18,6 +20,11 @@ class Course extends Model
     public function user()
     {
         return $this->belongsToMany(User::class, 'course_user');
+    }
+
+    public function userCourse()
+    {
+        return $this->hasMany(CourseUser::class);
     }
 
     public function tag()
@@ -37,7 +44,19 @@ class Course extends Model
 
     public function getTimeCourseAttribute()
     {
-        return $this->lesson->sum('time');
+        $time = $this->lesson()->sum('time');
+        $timeFormatHours = floor($time / 60);
+        $timeFormatMinutes = ceil($time - floor($time / 60) * 60);
+        $timeFormat = [
+            'hours' => $timeFormatHours,
+            'minutes' => $timeFormatMinutes
+        ];
+        if ($timeFormat['hours'] == 0) {
+            $time = $timeFormat['minutes'] ." (min)";
+        } else {
+            $time  = $timeFormat['hours'] . " (h)";
+        }
+        return $time;
     }
 
     public function getTagsAttribute()
@@ -58,5 +77,19 @@ class Course extends Model
         }
 
         return $tagName;
+    }
+
+    public function getCourseUserAttribute()
+    {
+        return $this->userCourse()->distinct('user_id')->count();
+    }
+
+    public function getCheckUserAttribute()
+    {
+        $check = [];
+        if (Auth::user()) {
+            $check = $this->user()->wherePivot("user_id", Auth::user()->id)->get();
+        }
+        return count($check);
     }
 }

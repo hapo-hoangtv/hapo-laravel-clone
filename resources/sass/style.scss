@@ -67,6 +67,10 @@
 }
 //end banner first
 
+.footer {
+  margin-top: -80px;
+}
+
 .main-footer {
   padding-bottom: 20px;
   padding-top: 20px;
@@ -507,14 +511,37 @@
     margin-top: -5px;
     @include font(bold, 16px, "Open Sans", 22px, #505353);
   }
+
+  .btn-search {
+    background: #B2D235;
+    border: 1px solid #B2D235;
+    border-radius: 5px;
+    width: 100px;
+    height: 35px;
+    margin-left: -20px;
+    margin-right: 130px;
+    @include font(bold, 15px, "UTM BryantLG", 20px, white);
+  }
+
+  .btn-join {
+    background: #B2D235;
+    box-shadow: inset 0px 1.5px 2px #6F8710;
+    border-radius: 22px;
+    width: 200px;
+    height: 35px;
+    border: 0;
+    @include font(bold, 17px, "UTM BryantLG", 22px, white);
+  }
+
   .find-input {
-    width: 355px;
+    width: 200px;
     background: #ffffff;
     border: 1px solid #c4c4c4;
     border-radius: 5px;
     padding: 5px 5px;
     @include font(bold, 16px, "Open Sans", 22px, #505353);
   }
+
   .search-icon {
     font-size: 16px;
     position: relative;
@@ -522,31 +549,42 @@
   }
 }
 
+.main-all-course {
+  background-color: #E5E5E5;
+}
+
 .main-body {
+  margin-bottom: 80px;
+ 
   .card {
     .card-title {
       @include font(bold, 25px, "UTM BryantLG", 31px, #505353);
     }
+
     .card-link-more {
       background-color: #b2d235;
       border-radius: 40px;
       @include font(bold, 22px, "UTM BryantLG", 25px, white);
     }
+
     .card-text {
       @include font(normal, 18px, "UTM BryantLG", 25px, #505353);
     }
+
     .course-learners,
     .course-lessons,
     .course-quizes {
       .card-link {
         @include font(bold, 25px, "UTM BryantLG", 31px, #505353);
       }
+      
       .card-number {
         @include font(bold, 30px, "UTM BryantLG", 37px, #b2d235);
       }
     }
   }
 }
+//end all-courses
 
 .modal-body {
   .modal-login {
@@ -729,6 +767,23 @@
     padding: 20px;
     border-top: 1px solid #e2e0e0;
     border-bottom: 1px solid #e2e0e0;
+
+    .btn-leave {
+      background: #B2D235;
+      box-shadow: inset 0px 1.5px 2px #6F8710;
+      border-radius: 22px;
+      width: 80%;
+      margin-left: 30px;
+      padding: 10px;
+
+      a {
+        -webkit-text-stroke: 0.5px;
+        @include font(bold, 20px, "UTM BryantLG", 22px, white);
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
   .course-info-tittle {
     background-color: #b2d235;
@@ -848,3 +903,151 @@
   }
 }
 
+.hapo-review-left {
+  background: #505353;
+  border-radius: 5px;
+  padding: 30px;
+  width: 45%;
+
+  .hapo-review-star {
+    @include font(bold, 60px, "UTM BryantLG", 74px, white);
+  }
+
+  .fa-star {
+    color: #FFD567;
+    font-size: 25px;
+  }
+
+  .hapo-review-rating {
+    @include font(bold, 16px, "UTM BryantLG", 20px, white);
+  }
+}
+
+.hapo-review-right {
+  border: 1px solid #DFDFDF;
+  box-sizing: border-box;
+  border-radius: 5px;
+  width: 65%;
+  @include font(bold, 16px, "UTM BryantLG", 20px, #505353);
+
+  .progress {
+    height: 5px;
+
+    .progress-bar {
+      background: #E1E1E1;
+    }
+  }
+}
+
+.hapo-review-des {
+  .hapo-review-all {
+    -webkit-text-stroke-width: 1px;
+    @include font(bold, 18px, "UTM BryantLG", 22px, #505353);
+
+    .fa-sort-down {
+      font-size: 13px;
+    }
+  }
+
+  .hapo-review-content {
+    img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .hapo-review-name {
+      -webkit-text-stroke-width: 1px;
+      @include font(bold, 18px, "UTM BryantLG", 22px, #505353);
+    }
+
+    .review-content-rating {
+      color: #FFD567;;
+    }
+
+    .hapo-review-time {
+      @include font(normal, 14px, "UTM BryantLG", 17px, #BDB9B9);
+    }
+  }
+
+  .hapo-review-body {
+    @include font(normal, 18px, "UTM BryantLG", 26px, #949292);
+  }
+}
+
+.leave-commnent {
+  h4 {
+    @include font(normal, 18px, "UTM BryantLG", 22px, #747474);
+  }
+}
+
+.rating {
+  float: left;
+}
+
+.rating:not(:checked) > input {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+.rating:not(:checked) > label {
+  float: right;
+  width: 1em;
+  padding: 0 0.1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 200%;
+  line-height: 1.2;
+  color: #ddd;
+}
+
+.rating:not(:checked) > label:before {
+  content: "★";
+}
+
+.rating > input:checked ~ label {
+  color: #f70;
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+  color: gold;
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+  color: #ea0;
+}
+
+.rating > label:active {
+  position: relative;
+  top: 2px;
+  left: 2px;
+}
+//detail-lesson/review
+
+.pagination {
+  margin-bottom: 30px;
+  margin-right: 25px;
+
+  .page-item {
+    margin-left: 4px;
+    
+    .page-link {
+      border: 1px solid $menu_color;
+      box-sizing: border-box;
+      border-radius: 3px;
+      @include font(bold, 18px, "Open Sans", 25px, $menu_color);
+    }
+  }
+
+  .page-item.active 
+  .page-link {
+    background-color: $menu_color;
+    color: white;
+    border: 1px solid $menu_color;
+  }
+}

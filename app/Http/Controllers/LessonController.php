@@ -11,8 +11,16 @@ class LessonController extends Controller
     public function show($id)
     {
         $lesson = Lesson::findOrFail($id);
+        $lessonReviews = $lesson->review()->get();
+        $rating = [
+            'five_star' => config('variable.fiveStar'),
+            'four_star' => config('variable.fourStar'),
+            'three_star' => config('variable.threeStar'),
+            'two_star' => config('variable.twoStar'),
+            'one_star' => config('variable.oneStar')
+        ];
         $otherCourses = Course::latest()->limit(config('variable.otherCourse'))->get();
-        return view('courses.detail_lesson', compact(['lesson', 'otherCourses']));
+        return view('courses.detail_lesson', compact(['lesson', 'otherCourses', 'lessonReviews', 'rating']));
     }
 
     public function getSearchLesson(Request $request, $id)
