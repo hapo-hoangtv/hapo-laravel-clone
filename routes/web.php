@@ -21,6 +21,7 @@ Auth::routes();
 
 Route::get('/index', 'HomeController@index')->name('index');
 Route::resource('course', 'CourseController');
+Route::resource('review', 'ReviewController');
 Route::get('/search-course', 'CourseController@getSearch')->name('course.search');
 Route::get('/search-lesson/{id}', 'LessonController@getSearchLesson')->name('lesson.search');
 Route::resource('lesson', 'LessonController');
@@ -31,3 +32,5 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'teacher'],
     Route::resource('users', 'UserAdminController');
     Route::get('/search-user', 'UserAdminController@search')->name('user.search');
 });
+Route::post('join-course/{id}', "CourseController@joinCourse")->name('join.course');
+Route::post('leave-course/{id}', "CourseController@leaveCourse")->name('leave.course');

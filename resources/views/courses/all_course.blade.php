@@ -1,13 +1,15 @@
 @extends('master')
 @section('title','List course')
 @section('main')
-    <div class="main-body my-5 container">
+<div class="main-all-course contain-fluid">
+    <div class="main-body mt-5 container">
         <div class="filter-find row my-3">
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center mt-3">
                 <form action="{{ Route('course.search') }}" method="GET">
                     <button class="btn filter-btn mr-2"><i class="fas fa-sliders-h mr-1"></i>Filter</button>
-                    <input type="text" placeholder="Search..." class="find-input" name="search" value="{{ request('search') }}">
+                    <input type="text" placeholder="Search..." class="find-input w-80" name="search" value="{{ request('search') }}">
                     <i class="fas fa-search search-icon"></i>
+                    <input type ="submit" value="Tìm kiếm" class="btn-search">
                 </form>
             </div>
         </div>
@@ -25,7 +27,7 @@
                                         @if(Auth::check()) 
                                         <a href="{{ Route('course.show',$course->id) }}" class="card-link-more col-4 offset-8 d-block text-center text-decoration-none py-xl-2 my-xl-3">More</a>
                                         @else 
-                                        <a href="{{ Route('index') }}" class="card-link-more col-4 offset-8 d-block text-center text-decoration-none py-xl-2 my-xl-3">More</a>
+                                        <a data-target="#loginRegister" data-toggle="modal" href="#" class="card-link-more col-4 offset-8 d-block text-center text-decoration-none py-xl-2 my-xl-3">More</a>
                                         @endif
                                     </div>
                                 </div>
@@ -39,8 +41,8 @@
                                         <p class="card-number mb-0">{{ $course->number_lesson }}</p>
                                     </div>
                                     <div class="course-quizes col-xl-4 text-center">
-                                        <a href="#" class="card-link mb-2 d-block">Quizzes</a>
-                                        <p class="card-number mb-0">16,882</p>
+                                        <a href="#" class="card-link mb-2 d-block">Times</a>
+                                        <p class="card-number mb-0">{{ $course->time_course }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -51,6 +53,9 @@
                 <h1>No course found!</h1>
             @endif
         </div>
-    {{ $courses->appends($_GET)->links() }}
+        <div class="pagination d-flex justify-content-end">
+            {{ $courses->appends($_GET)->links() }}
+        </div>
     </div>
+</div>    
 @endsection

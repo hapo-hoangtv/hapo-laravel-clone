@@ -11,8 +11,8 @@
             <div class="course-desc-body">{{ $courses->description }}</div>
         </div>
     </div>
-    <div class="course-lesson-name row">
-        <div class="col-7">
+    <div class="course-lesson-name row mb-5">
+        <div class="col-7 px-0">
             <div class="course-detail d-flex flex-column justify-content-center">
                 <div class="course-detail-lesson p-3">
                     <div class="course-lesson-top d-flex mb-4">
@@ -24,13 +24,30 @@
                             </div>
                         </nav>
                     </div>
-                    <div class="filter-find mb-3">
+                    <div class="filter-find mb-3 row">
                         <div class="d-flex align-items-center">
                             <form action="{{ Route('lesson.search', $courses->id) }}" method="GET">
-                                <button class="btn filter-btn mr-2"><i class="fas fa-sliders-h mr-1"></i>Filter</button>
                                 <input type="text" placeholder="Search..." class="find-input" name="search" value="{{ request('search') }}">
                                 <i class="fas fa-search search-icon"></i>
+                                <input type ="submit" value="Tìm kiếm" class="btn-search">
                             </form>    
+                        </div>
+                        <div class="">
+                            @if ($courses->check_user)
+                                <form action="{{ route('leave.course', $courses->id) }}" method="post">
+                                    @csrf
+                                    <input type ="submit" value="Kết thúc khóa học" class="btn-join">
+                                </form>
+                            @else
+                            @if (Auth::check())
+                                <form action="{{ route('join.course', $courses->id) }}" method="post">
+                                    @csrf
+                                    <input type ="submit" value="Tham gia khóa học" class="btn-join">
+                                </form>
+                                @else
+                                    <a data-target="#myModal" data-toggle="modal" href="#" class="btn btn-join px-4">Tham gia khóa học</a>
+                                @endif
+                            @endif    
                         </div>
                     </div>
                     <div class="course-detail-lesson-detail">
@@ -42,7 +59,7 @@
                                 </a>
                             @endforeach
                             <div class="mt-4">
-                                <div class="pagination">
+                                <div class="pagination d-flex justify-content-end">
                                     {{ $lessons->appends($_GET)->links() }}
                                 </div>
                             </div>
@@ -53,23 +70,25 @@
                 </div>
             </div>
         </div>
-        <div class="course-info col-4 h-50 ml-5 px-0">
-            <div class="course-info-text">
-                <i class="fas fa-users"></i> Learners: {{ $courses->number_user }}
+        <div class="col-4 h-50 ml-5 px-0">
+            <div class="course-info">
+                <div class="course-info-text">
+                    <i class="fas fa-users"></i> Learners: {{ $courses->number_user }}
+                </div>
+                <div class="course-info-text">
+                    <i class="far fa-list-alt"></i> Lessons: {{ $courses->number_lesson }} lessons
+                </div>
+                <div class="course-info-text">
+                    <i class="far fa-clock"></i> Times: {{ $courses->time_course }} 
+                </div>
+                <div class="course-info-text">
+                    <i class="fas fa-hashtag"></i> Tags: #learn #code
+                </div>
+                <div class="course-info-text">
+                    <i class="far fa-money-bill-alt"></i> Price: {{ $courses->price }}.000 VNĐ
+                </div>
             </div>
-            <div class="course-info-text">
-                <i class="far fa-list-alt"></i> Lessons: {{ $courses->number_lesson }} lessons
-            </div>
-            <div class="course-info-text">
-                <i class="far fa-clock"></i> Times: {{ $courses->time_course }} minutes
-            </div>
-            <div class="course-info-text">
-                <i class="fas fa-hashtag"></i> Tags: #learn #code
-            </div>
-            <div class="course-info-text">
-                <i class="far fa-money-bill-alt"></i> Price: {{ $courses->price }}.000VNĐ
-            </div>
-            <div class="mt-3">
+            <div class="course-info mt-3 mb-5">
                 <div class="course-info-tittle d-flex justify-content-center align-items-center">Other Courses</div>
                 <div class="other-list">
                     @foreach ($otherCourses as $key => $otherCourse)
@@ -81,7 +100,7 @@
                         <button class="btn btn-view p-2 px-4" onclick="location.href='{{ Route('course.index') }}'">View all ours courses</button>
                     </div>
                 </div>
-            </div>
+            </div>        
         </div>
     </div>
 </div>
