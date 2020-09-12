@@ -31,7 +31,7 @@
                                     {{ $lesson->requirement }}
                                 </div>
                                 <div class="lesson-detail-text d-flex align-items-center">
-                                    <div class="lesson-detail-title pr-4">Tag:</div> {{ $lesson->course->course_tag }}
+                                    <div class="lesson-detail-title pr-4">Tag:</div> <a class="text-decoration-none" href="#">{{ $lesson->course->tag_course }}</a>
                                 </div>
                             </div>
                         </div>        
@@ -247,7 +247,7 @@
                     <i class="far fa-clock"></i> Times:  {{ $lesson->time }} minutes
                 </div>
                 <div class="course-info-text">
-                    <i class="fas fa-hashtag"></i> Tags: #tag1 #tag2
+                    <i class="fas fa-hashtag"></i> Tags: <a class="text-decoration-none" href="#">#{{ $lesson->course->tag_course }}</a>
                 </div>
                 <div class="course-info-text">
                     <i class="far fa-money-bill-alt"></i> Price: {{ $lesson->course->price }}.000 VNĐ
