@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class Course extends Model
 {
     public $timestamps = false;
+    protected $table = 'courses';
     protected $fillable = ['name', 'image', 'description', 'price', 'time'];
 
     public function lesson()

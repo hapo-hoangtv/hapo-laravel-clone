@@ -82,7 +82,7 @@
                     <i class="far fa-clock"></i> Times: {{ $courses->time_course }} 
                 </div>
                 <div class="course-info-text">
-                    <i class="fas fa-hashtag"></i> Tags: #learn #code
+                    <i class="fas fa-hashtag"></i> Tags: <a class="text-decoration-none" href="#">#{{ $courses->tag_course }}</a>
                 </div>
                 <div class="course-info-text">
                     <i class="far fa-money-bill-alt"></i> Price: {{ $courses->price }}.000 VNĐ
