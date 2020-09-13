@@ -47,6 +47,6 @@ class User extends Authenticatable
 
     public function getIsTeacherAttribute()
     {
-        return $this->role_id == self::ROLE['teacher'];
+        return $this->role_id == self::ROLE_TEACHER;
     }
 }

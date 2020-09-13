@@ -45,7 +45,7 @@
                                     <input type ="submit" value="Tham gia khóa học" class="btn-join">
                                 </form>
                                 @else
-                                    <a data-target="#myModal" data-toggle="modal" href="#" class="btn btn-join px-4">Tham gia khóa học</a>
+                                    <a data-target="#loginRegister" data-toggle="modal" href="#" class="btn btn-join px-4">Tham gia khóa học</a>
                                 @endif
                             @endif    
                         </div>
@@ -53,10 +53,21 @@
                     <div class="course-detail-lesson-detail">
                         @if (count($lessons) > 0)
                             @foreach ($lessons as $key => $lesson)
-                                <a class="d-flex justify-content-between align-items-center p-3 but-learn">
-                                    <p class="my-auto">{{ ++$key }} . {{ $lesson->name }}</p>
-                                    <button class="btn btn-learn" onclick="location.href='{{ Route('lesson.show', $lesson->id) }}'">Learn</button>
-                                </a>
+                                <div class="d-flex justify-content-between align-items-center p-3 but-learn">
+                                    <p class="my-auto @if ($lesson->check_user_learn) lesson-change @endif">{{ ++$key }} . {{ $lesson->name }}</p>
+                                    @if($courses->check_user)
+                                        @if ($lesson->check_user_learn)
+                                        <button class="btn btn-learn" onclick="location.href='{{ Route('lesson.show', $lesson->id) }}'">Learn</button>
+                                        @else
+                                        <form action="{{ route('join.lesson', $lesson->id) }}" method="post">
+                                            @csrf
+                                            <input type="hidden" value="{{ Auth::user()->id }}" name="user_id">
+                                            <input type="hidden" value="{{ $courses->id}}" name="course_id">
+                                            <button class="btn btn-learn-lesson">Learn</button>
+                                        </form>
+                                        @endif
+                                    @endif
+                                </div>
                             @endforeach
                             <div class="mt-4">
                                 <div class="pagination d-flex justify-content-end">
@@ -70,6 +81,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="col-4 h-50 ml-5 px-0">
             <div class="course-info">
                 <div class="course-info-text">

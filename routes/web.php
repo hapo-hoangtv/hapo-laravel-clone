@@ -34,3 +34,4 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'teacher'],
 });
 Route::post('join-course/{id}', "CourseController@joinCourse")->name('join.course');
 Route::post('leave-course/{id}', "CourseController@leaveCourse")->name('leave.course');
+Route::post('join-lesson/{id}', "LessonController@joinLesson")->name('join.lesson');
