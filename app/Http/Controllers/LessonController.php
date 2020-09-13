@@ -27,7 +27,7 @@ class LessonController extends Controller
         ];
         $otherCourses = Course::latest()->limit(config('variable.otherCourse'))->get();
         return view('courses.detail_lesson', compact(['lesson', 'otherCourses', 'lessonReviews', 'teachers',
-        'rating']));
+        'courseId', 'rating']));
     }
 
     public function getSearchLesson(Request $request, $id)
