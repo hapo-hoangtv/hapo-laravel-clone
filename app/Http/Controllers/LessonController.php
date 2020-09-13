@@ -26,7 +26,8 @@ class LessonController extends Controller
             'one_star' => config('variable.oneStar')
         ];
         $otherCourses = Course::latest()->limit(config('variable.otherCourse'))->get();
-        return view('courses.detail_lesson', compact(['lesson', 'otherCourses', 'lessonReviews', 'rating', 'teachers']));
+        return view('courses.detail_lesson', compact(['lesson', 'otherCourses', 'lessonReviews', 'teachers',
+        'rating']));
     }
 
     public function getSearchLesson(Request $request, $id)

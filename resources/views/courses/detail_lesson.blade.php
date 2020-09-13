@@ -37,11 +37,12 @@
                         </div>        
                         <div class="tab-pane fade" id="nav-teacher" role="tabpanel" aria-labelledby="nav-teacher-tab">
                             <div class="lesson-detail-title">Main Teacher</div>
+                            @foreach ($teachers as $teacher)
                             <div class="mt-4">
                                 <div class="teacher-info d-flex align-items-center my-4">
-                                    <img src="{{ asset('storage/image/Ellipse 32.png') }}" class="teacher-info-img rounded-circle">
+                                    <img src="{{ asset('storage/image/'. $teacher->avatar) }}" class="teacher-info-img rounded-circle">
                                     <div class="d-flex flex-column ml-4">
-                                        <div class="teacher-info-name">Luu Trung Nghia</div>
+                                        <div class="teacher-info-name">{{ $teacher->name }}</div>
                                         <div class="teacher-info-exp">Second Year Teacher</div>
                                         <div class="d-flex mt-2">
                                             <div class="teacher-info-plus"><i class="fab fa-google-plus-g"></i></div>
@@ -58,6 +59,7 @@
                                     ultricies convallis neque. Pellentesque tristique
                                 </div>
                             </div>
+                            @endforeach
                         </div>
                         <div class="tab-pane fade" id="nav-program" role="tabpanel" aria-labelledby="nav-program-tab">
                             <div class="lesson-detail-title py-3">Program</div>
@@ -254,7 +256,10 @@
                 </div>
                 <div class="course-info-text">
                     <div class="btn-leave text-center">
-                        <a href="#" class="text-decoration-none">Kết thúc khóa học</a>
+                        <form action="{{ route('join.course', $lesson->course->id) }}" method="post">
+                            @csrf
+                            <button class="btn btn-leave-lesson px-4">Kết thúc khóa học</button>
+                        </form>
                     </div>
                 </div>
             </div>
