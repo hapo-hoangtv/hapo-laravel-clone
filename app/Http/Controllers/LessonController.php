@@ -43,14 +43,13 @@ class LessonController extends Controller
 
     public function joinLesson(Request $request, $id)
     {
-        $lesson = Lesson::findOrFail($id);
         $this->saveCourseUser($id, $request);
         return redirect()->route('lesson.show', $id);
     }
 
     public function saveCourseUser($id, $request)
     {
-        $courseUser = CourseUser::updateOrCreate([
+        CourseUser::updateOrCreate([
             'user_id' => $request->user_id,
             'course_id' => $request->course_id,
             'lesson_id' => $id
