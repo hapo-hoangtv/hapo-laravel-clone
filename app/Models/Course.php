@@ -46,17 +46,10 @@ class Course extends Model
     public function getTimeCourseAttribute()
     {
         $time = $this->lesson()->sum('time');
-        $timeFormatHours = floor($time / 60);
-        $timeFormatMinutes = ceil($time - floor($time / 60) * 60);
-        $timeFormat = [
-            'hours' => $timeFormatHours,
-            'minutes' => $timeFormatMinutes
-        ];
-        if ($timeFormat['hours'] == 0) {
-            $time = $timeFormat['minutes'] ." (min)";
-        } else {
-            $time  = $timeFormat['hours'] . " (h)";
-        }
+        $hours = floor($time / 60);
+        $minutes = $time - $hours * 60;
+        $time = ($hours > 0) ? ($hours. '(h)'. ' ' . $minutes.'(min)') : ($minutes. '(min)');
+    
         return $time;
     }
 

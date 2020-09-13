@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\User;
 use App\Models\Review;
 use App\Models\CourseUser;
+use Illuminate\Support\Facades\Auth;
 
 class Lesson extends Model
 {
@@ -20,7 +21,7 @@ class Lesson extends Model
 
     public function user()
     {
-        return $this->hasMany(User::class, 'course_user');
+        return $this->belongsToMany(User::class, 'course_user');
     }
 
     public function userLesson()
@@ -61,5 +62,14 @@ class Lesson extends Model
         $allRatingCount = ($this->number_lesson_review) ?: 1;
         $percent = $query / $allRatingCount * 100;
         return $percent;
+    }
+
+    public function getCheckUserLearnAttribute()
+    {
+        $check = [];
+        if (Auth::user()) {
+            $check = $this->user()->wherePivot("user_id", Auth::user()->id)->get();
+        }
+        return count($check);
     }
 }

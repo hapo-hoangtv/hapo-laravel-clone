@@ -24,7 +24,6 @@
             <th>Phone</th>
             <th>Avatar</th>
             <th>Role</th>
-            <th>Action</th>
             <th>Edit</th>
             <th>Delete</th>
         </tr>
@@ -37,8 +36,7 @@
         <td>{{ $user['email'] }}</td>
         <td>{{ $user['phone'] }}</td>
         <td>{{ $user['avatar'] }}</td>
-        <td>{{ $user['role_id'] }}</td>
-        <td></td>
+        <td>{{ ($user['role_id'] == 1) ? 'Student' : 'Teacher' }}</td>
         <td><a href="{{ Route('admin.users.edit', $user['id']) }}" class="btn btn-primary">Sửa</a></td>
         <td>
             <form action="{{ Route('admin.users.destroy', $user['id']) }}" method="post">

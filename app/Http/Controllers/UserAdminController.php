@@ -54,15 +54,16 @@ class UserAdminController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->all();
-        $users = User::find($id);
-        $data['password'] = bcrypt('password');
+        $user = User::find($id);
+        
         if ($request->hasFile('avatar')) {
-            $image = $users->avatar;
+            $image = $user->avatar;
             Storage::delete(config('variable.link').$image);
             $avatar = $this->uploadImageAvatar($request->file('avatar'));
             $data['avatar'] = $avatar;
         }
-        $users->update($data);
+        $data['password'] = isset($data['password']) ? Hash::make($data['password']) : $user['password'];
+        $user->update($data);
         return redirect('admin/users')->with('message', __('messages.success.edit'));
     }
 

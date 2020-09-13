@@ -27,7 +27,7 @@
         </div>
         <div class="form-group">
             <label for="password">Password:</label>
-            <input type="password" class="form-control" name="password" value="{{ $users['password'] }}" placeholder="Password"/><br>
+            <input type="password" class="form-control" name="password" value="" placeholder="Password"/><br>
             @if ($errors->has('password'))
                 <div class="alert alert-danger">
                     {{ $errors->first('password') }}

@@ -579,7 +579,7 @@
       }
       
       .card-number {
-        @include font(bold, 30px, "UTM BryantLG", 37px, #b2d235);
+        @include font(bold, 25px, "UTM BryantLG", 37px, #b2d235);
       }
     }
   }
@@ -727,12 +727,33 @@
   }
 }
 
+.lesson-change {
+  color: blue;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .btn-learn {
   background: #B2D235;
   box-shadow: inset 0px 1.5px 2px #6F8710;
   border-radius: 22px;
   @include font(bold, 15px, "UTM BryantLG", 18px, white);
 }
+
+.btn-learn-lesson {
+  background: #B2D235;
+  box-shadow: inset 0px 1.5px 2px #6F8710;
+  border-radius: 22px;
+  @include font(bold, 15px, "UTM BryantLG", 18px, white);
+
+  &:hover {
+    opacity: 0.8;
+    color: #F2C54F;
+  }
+}
+
 .btn-view {
   background-color: #B2D235;
   border: 1px solid #DEDEDE;
@@ -776,8 +797,7 @@
       margin-left: 30px;
       padding: 10px;
 
-      a {
-        -webkit-text-stroke: 0.5px;
+      .btn-leave-lesson {
         @include font(bold, 20px, "UTM BryantLG", 22px, white);
       }
       &:hover {
@@ -785,6 +805,7 @@
       }
     }
   }
+  
   .course-info-tittle {
     background-color: #b2d235;
     padding: 20px;
